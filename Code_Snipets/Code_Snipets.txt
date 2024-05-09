@@ -1,6 +1,3 @@
-Test _ 2
-
-
 
 Consider below code:
 public class Test {
@@ -192,11 +189,11 @@ Answer: E
 
 
 Consider below statements:
-1. int x = 5____0;// Literal values can be with _ also but it should be in b/w not at the beggining or at the end
-2. int y = ___50;//invalid becoz starts with _
-3. int z = 50_____;//invalid becoz in ends with _
-4. float f = 123.76_86f;//valid
-5. double d = 1_2_3_4;//valid
+int x = 5____0;// Literal values can be with _ also but it should be in b/w not at the beggining or at the end
+int y = ___50;//invalid becoz starts with _
+int z = 50_____;//invalid becoz in ends with _
+float f = 123.76_86f;//valid
+double d = 1_2_3_4;//valid
 How many statements are legal?
 A. One statement only
 B. Two statement only
@@ -204,3 +201,234 @@ C. Three statement only
 D. Four statement only
 E. All 5 statement only.
 Answer : C
+
+
+
+--------------------------------
+
+
+int x=10, y=15;
+if(++x < 10 & ++y > 15) { //11<10(false) | 16>15(true) Γ x++;
+}
+else { y++;
+} System.out.println(x+"----"+y);
+
+predict x and y value by replacting the operators with || => x and y value ?
+|| -> it is called as "Short circuit OR operator"
+second operand evaluation will happen only if the first operand result is false
+x = 12
+y = 16
+&& => x and y value
+&& -> it is called as "Short circuit AND operator" I
+second operand evaluation will happen only if the first operaand result is true
+x = 11
+y = 16
+| => x and y value
+|=> It is called as "Logical OR operator" both the operands result will be evaluated.
+x = 12
+y = 16
+& => x and y value ?
+& -> It is called as "Logical AND operator" both the operands result will be evaulated
+x =11
+y =17
+
+
+-----------------------------
+
+
+int x=10;
+if(++x < 10 && ((x/0)>10)) { //11<10===> if(false) System.out.println("Hello");
+}
+else {
+System.out.println("Hi");
+}
+A. Hello
+B. Hi
+C. Compile Time Error
+D. Exception
+E. None of the above.
+
+Answer: B
+
+
+
+
+------------------------------------
+
+
+
+
+int i=10;//10
+int j=20;//30
+int k= (j+=i)/5;// k = (j= j+i)/5
+k= (j=20+10)/5
+k = (j=30)/5
+k= 30/5
+k= 6
+System.out.println(i+":"+j+":"+k);
+A.10:30:6
+B.10:22:22
+C.10:22:20
+D.10:22:6 I
+Answer : A
+
+
+
+
+
+
+
+int x =10;
+if(x){//CE: unexpected type required: boolean, found:int System.out.println("hello");
+}else{
+System.out.println("hiee");
+}
+A. hello
+B. hiee
+C. CompileTime Error
+D. Some problem by jvm at the execution
+E. None of the above
+Answer: C
+
+-----------------
+
+int x =10;
+if(x=20){
+System.out.println("hello");
+}else{
+System.out.println("hiee");
+}
+A. hello
+B. hiee
+C. CompileTime Error
+D. Some problem by jvm at the execution
+E. None of the above 1
+Answer: C
+
+
+
+
+int x =10;
+if(x==20){//operator used is Equality operator ==,!= output is boolean
+
+System.out.println("hello"); 
+}else{
+System.out.println("hiee");
+}
+A. hello
+B. hiee
+C. CompileTime Error
+D. Some problem by jvm at the execution
+E. None of the above I
+Anser: B
+
+--------------------------
+
+
+boolean b= false;
+if(b=true){//assignment operator is evaluted on boolean type, JVM if(true) System.out.println("hello");
+}else{
+System.out.println("hiee");
+}
+A. hello
+B. hiee
+C. CompileTime Error
+D. Some problem by jvm at the execution
+E. None of the above
+Answer: A
+
+
+-----------------------
+
+boolean b= false;
+if(b==true){//Equality operator result is boolean type, JVM if(false == true) ----> if(fals System.out.println("hello");
+}else{
+System.out.println("hiee");
+}
+A. hello
+B. hiee
+C. CompileTime Error
+D. Some problem by jvm at the execution
+E. None of the above
+Answer: B
+
+
+------------------------
+
+
+if(boolean)
+stmt-1;
+Note: if there is only statement which needs to be a part of if, then {} is optional.
+if(true)
+System.out.println("hello");
+A. Compile Time Error
+B. hello
+C. Some problem by jvm at the execution
+D. None of the above 
+Answer: B
+
+
+-----------------
+
+
+public class Test{
+public static void main(String args[]){
+if(true);
+}
+}
+A. Compile Time Error
+B. hello
+C. Some problem by jvm at the execution
+D. No Output
+Answer: D(becoz; is also valid java statement)
+
+
+--------------------------
+
+Note: if there is only statement which needs to be a part of if, then {} is optional, but that statement should not be a declarative statement.
+public class Test{
+public static void main(String args[]){
+if(true)
+int x=10; //CE: declaration not allowed here
+}
+}
+A. Compile Time Error
+B. hello
+C. Some problem by jvm at the execution
+D. No Output
+Answer: A
+
+
+-----------------------------
+
+public class Test{
+public static void main(String args[]){
+if(true) {
+int x=10; //valid for compiler becoz of {}
+}
+}
+}
+A. Compile Time Error
+B. hello
+C. Some problem by jvm at the execution
+D. No OutputI
+Answer: D
+
+
+
+-------------------
+
+
+public class Test{
+public static void main(String args[]){
+if(true)
+System.out.println("hello");//Dependent of if statement
+System.out.println("hiee");//Independent of if statement
+}
+}
+How many statements are independent of if?
+A. 0-stmt
+B. 1-stmt
+C. 2-stmt
+D. 3-stmt
+Answer: B
