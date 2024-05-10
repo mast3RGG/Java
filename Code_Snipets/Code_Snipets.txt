@@ -432,3 +432,194 @@ B. 1-stmt
 C. 2-stmt
 D. 3-stmt
 Answer: B
+
+
+
+---------------------
+
+
+public class Test{
+public static void main(String args[]){
+int x=10;
+switch(x)
+{
+System.out.println("hello"); //Statement is not a part of case lable so CompileTime Error
+}
+}
+}
+A. CompileTimeError
+B. hello
+C. JVM will create problem at the runtime
+D. None of the above
+answer: A
+
+--------------------------------- 
+
+
+
+public class Test{
+public static void main(String args[]){
+int x= 10;
+int y = 20;
+switch(x)
+{
+case 10: System.out.println("hello");
+break;
+case y:System.out.println("hiee"); //CE: 'y' value is not CompileTime Constant
+break;
+}
+}
+}
+A. CompileTimeError
+B. hello
+C. hiee
+D. JVM will create problem at the runtime
+E. None of the above
+
+Answer : A.CompileTimeError
+
+
+----------------------------
+public class Test{
+Nitin Manjan
+public static void main(String args[]){
+int x= 10;
+final int y = 20;//final means compiler will get to know the value and compiler treats it as "CompileTime Constant".
+switch(x)
+{
+case 10: System.out.println("hello");
+break;
+case y:System.out.println("hiee");
+break;
+1}
+}
+A. CompileTimeError
+B. hello
+C. hiee
+D. JVM will create problem at the runtime
+E. None of the above
+Answer: B	
+
+
+----------------------
+
+public class Test{
+public static void main(String args[]){
+int x=10;
+switch(x+1)
+{
+case 10:
+case 10+20:
+case 10+20+30:
+}
+}
+}
+A. CompileTimeError
+B. No Output
+C. JVM will create problem at the runtime
+D. None of the above
+Answer: B
+
+
+-------------------
+
+
+public class Test{
+public static void main(String args[]){
+byte x=10;
+switch(x)
+{
+case 10:System.out.println("hello");
+break;
+case 100: System.out.println("hiee");
+break;
+case 1000: System.out.println("byee");//CE: possibly loss of precession from byte to int
+break;
+}
+}
+}
+A. CompileTimeError
+B. hello
+C. JVM will create problem at the runtime
+D. hiee
+
+Answer : A.CompuleTimeError
+
+
+---------------------------------
+
+
+public class Test{
+public static void main(String args[]){
+byte x=10;
+switch(x+1) //byte + int int -- { , so switch(int)
+case 10:System.out.println("hello"); break;
+case 100: System.out.println("hiee"); break;
+case 1000: System.out.println("byee");
+break;
+}
+}
+}
+A. CompileTimeError
+B. hello
+C. JVM will create problem at the runtime
+D. hiee
+E. byee
+F. no output
+
+Answer: no output
+
+
+
+----------------------------
+
+
+
+public class Test{
+public static void main(String args[]){
+int x=97;
+switch(x){
+case 97:System.out.println("97");
+break;
+case 99:System.out.println("99");
+break;
+case 'a':System.out.println("100"); // int x= 'a'; x = 97
+break;
+}
+}
+}
+A. 97
+B. CompileTimeError
+C. JVM will create problem at the runtime
+D. 99
+E. 100 I
+Answer: B
+
+
+
+------------------
+
+
+
+public class Test {
+public static void main(String[] args) {
+int a = 5;
+int x = 10;
+switch(x) {
+case 10:
+a *= 2;// a = a*2 = 5*2 = 10, a = 10
+case 20:
+a *= 3;//a = a*3, a=10*3 = 30, a = 30
+case 30:
+a *= 4;// a = a*4, a =30 * 4 =120, a= 120
+}
+System.out.println(a);//120
+}
+}
+A. 5
+Β. 10
+C. 30
+D. 120
+E.CompileTimeError
+
+Answer : D.120
