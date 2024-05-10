@@ -701,3 +701,78 @@ Note: ^ -> exor => both operands same means false, otherwise true.
 eg: 	true ^ true => false
 	true ^ false => true
 Answer: A , D , F
+
+
+
+--------------------
+
+
+
+
+class Sixties {
+public static void main(String[] args) {
+int x = 5;//JVM x= 5
+int y = 7;//JVM y = 7
+System.out.print(((y* 2) % x));//S.o.p( (7*2)%5)), S.o.p(14%5), S.o.p(4);
+System.out.print("" + (y % x));//S.o.p(7% 5), S.o.p(2);
+}
+}
+What is the result?
+A. 11
+B. 12
+C. 2 1
+D. 2 2
+E. 4 1
+F. 4 2
+G. Compilation fails.
+H. An exception is thrown at runtime.  
+
+
+
+---------------------
+
+
+
+class Hexy {
+public static void main(String[] args) {
+Integer i = 42;//JVM i = 42
+String s = (i<40)?"life": (i>50)?"universe":"everything";// (42<40)? true: (42>50) ? true : "everything"; System.out.println(s);//S.o.p(everything)
+}
+}
+What is the result?
+A. null
+B. life
+C. universe
+D. everything
+E. Compilation fails.
+F. An exception is thrown at runtime.
+Answer: D
+
+
+----------------------
+
+
+
+public class Foozit {
+public static void main(String[] args) {
+Integer x = 0;
+Integer y = 0;
+for(Short z = 0; z < 5; z++)
+if((++x > 2) || (++y > 2))
+x++;
+System.out.println(x + " " + y);
+}
+}
+What is the result?
+A. 5 1
+B. 5 2
+C. 5 3
+D. 8 1
+Ε. 8 2
+F. 8 3
+G. 10 2
+Η. 10 3
+I. Compiletime Error
+J. Some problem created by JVM during execution
+
+Answer : E
