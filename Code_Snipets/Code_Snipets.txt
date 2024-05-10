@@ -623,3 +623,81 @@ D. 120
 E.CompileTimeError
 
 Answer : D.120
+
+
+--------------------------------
+
+
+
+public class Test{
+public static void main(String args[]){
+int x=?;
+switch(x)
+{
+default:System.out.println("default"); case 0:System.out.println("0");
+break;
+case 1: System.out.println("1");
+case 2:System.out.println("2");
+}
+}
+}
+
+
+Note: replace x with 0,1,2,3 and predict the output
+x = 0 output = 0
+x = 1 output = 1
+	       2
+
+x = 2 output = 2
+
+x = 3 output = default
+	       0
+
+
+-----------------------------
+
+
+
+
+Boolean b1 = true;//Wrapper class, jvm b1=true,false
+boolean b2 = false;//primitive, jvm b2 =false
+boolean b3 = true;//primitive, jvm b3= true
+if ((b1 & b2) | (b2 & b3) & b3)// bitwise operator return type -> boolean, jvm if(false | (false) & true), if (false&true), if(false) System.out.print("alpha ");
+if ((b1 = false) | (b1 & b3) | (b1 | b2))	//bitwise operator return type->boolean, 
+System.out.print("beta "); 			//jvm if(false | (false & true) | (false false)), if(false | false | false), if(false)
+What is the result?
+A. beta
+B. alpha
+C. alpha beta
+D. Compilation fails.
+E. No output is produced.
+F. An exception is thrown at runtime. 
+Answer: E
+
+
+
+-------------------------------
+
+
+
+
+1. class Maybe {
+2. public static void main(String[] args) {
+3.boolean b1 = true;
+4.boolean b2 = false;//b2=true
+5.System.out.print(!false^ false);// true ^ false => true
+6.System.out.print("" + (!b1 & (b2 = true)));//false &true => false
+7.System.out.println("" + (b2^b1));//true^ true => false
+8. }
+9.}
+Which are true?
+A. Line 5 produces true.
+B. Line 5 produces false.
+C. Line 6 produces true.
+D. Line 6 produces false.
+E. Line 7 produces true.
+F. Line 7 produces false.
+Note: ^ -> exor => both operands same means false, otherwise true.
+eg: 	true ^ true => false
+	true ^ false => true
+Answer: A , D , F
