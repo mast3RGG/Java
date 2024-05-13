@@ -1,0 +1,182 @@
+class Test{
+public static void main(String args[]){
+int x=0;
+switch(x){
+case 0:System.out.println("hello");
+break;//It is used to avoid fallthrough in switch
+case 1:System.out.println("hi");
+}
+}
+}
+Predict the Output:
+A.Compile Time Error
+B. Some problem occured by jvm during execution
+C.hello
+hi
+D. hello
+Answer: D
+
+
+-------------------------------------------------
+
+
+
+class Test{
+public static void main(String args[]){
+for(int i=0; i<10; i++) {// i = 0,0<10(true), i = 1,1<10(true)
+if(i==5)
+break;//control will come out of the executing loop
+System.out.println(i);//0,1,2,3,4
+}
+}
+}
+Predict the Output:
+A.Compile Time Error
+B. Some problem occured by jvm during execution
+C.0 1 2 3 4
+D. 012346789
+
+Answer: C
+
+
+
+----------------------------
+
+
+
+class Test{
+public static void main(String args[]){
+int x=10;
+11: {
+System.out.println("begin");
+if(x==10)
+break 11;
+System.out.println("end");
+}
+System.out.println("hello");
+}
+}
+}
+Predict the Output:
+A.Compile Time Error
+B. Some problem occured by jvm during execution
+C. begin
+end
+D.Begin
+  End
+  Hello
+F: None of the abve
+
+Answer : E(begin and hello)
+
+
+
+-----------------------------
+
+
+class Test{
+public static void main(String args[]){
+int x=10;
+if(x==10)
+break;
+System.out.println("hello");
+}
+}
+Predict the Output:
+A.Compile Time Error
+B. Some problem occured by jvm during execution
+C. hello
+D. None of the above I
+Answer: A (break can be used in switch, loop and labelled block, otherplace compile time error)
+
+----------------------------
+
+
+class Test{
+public static void main(String args[]){
+int x=2;
+for(int i = 0; i<10;i++) {
+if(i%x==0)
+continue;//it will skip the current iteration and proceeds with next iteration System.out.println(i);
+}
+}
+}
+Predict the Output:
+A. Compile Time Error
+B. Some problem occured by jvm during execution
+C. 02468
+D. 13579
+E. None of the above
+
+Answer : D;
+
+
+-------------------------------
+
+
+
+class Test
+{
+public static void main(String args[]){
+int x=10;
+if(x==10)
+continue;//continue can't be used here
+System.out.println("hello");
+}
+}
+Predict the Output:
+A. Compile Time Error
+B. Some problem occured by jvm during execution
+C. hello
+E. None of the above
+Answer: A
+
+
+------------------------------
+
+
+
+class Test{
+public static void main(String args[]){
+int x=0;
+switch(x){
+case 0:System.out.println("hello");
+continue;
+case 1:System.out.println("hi");
+}
+}
+}
+Predict the Output:
+A.Compile Time Error
+B. Some problem occured by jvm during execution
+C.hello
+hi
+D. hello
+Answer: A(continue can be used only in loops and labelled block, otherplaces compile time error)
+
+---------------------------
+
+
+
+class Test{
+public static void main(String args[]){
+11:for(int i=0;i<3;i++) 
+{
+for(int j=0;j<3;j++)
+{
+if(i==j)
+stmt1;
+System.out.println(i+""+j);// 10 2021
+}
+}
+}
+}
+replace stmt1 with break and predict the output? 
+Answer:1 0 2 0 2 1
+replace stmt1 with break and predict the output? Answer:10 2021
+replace stmt1 with break 11 and predict the output?
+Answer: no output
+replace stmt1 with continue and predict the output?
+Answer: 01, 02,10,12,20,21
+replace stmt1 with continue 11 and predict the output?
+Answer: 10 20 21
