@@ -180,3 +180,56 @@ replace stmt1 with continue and predict the output?
 Answer: 01, 02,10,12,20,21
 replace stmt1 with continue 11 and predict the output?
 Answer: 10 20 21
+
+
+
+------------------------------
+
+
+
+class Test{
+public static void main(String args[]){
+while(true){
+System.out.println("hello");//line-n1
+}
+System.out.println("hi");//line-n2
+}
+}
+Predict the output
+A. Compile time error at line-n1
+B. some problem occured during jvm execution.
+C.Compile time error at line-n2
+D. hello
+hi
+E. hello infinite times
+F. None of the above
+
+Answer: C(Concept of unreacheble
+
+
+----------------------------------
+
+
+
+class Test{
+public static void main(String args[]){
+if(true){
+System.out.println("hello");//line-n1
+}
+else{
+System.out.println("hi");//line-n2
+}
+}
+}
+Predict the output
+A. compile time error at line-n1
+B. some problem occured during jvm execution.
+C.Compile time error at line-n2
+D. hello
+hi
+E. hello
+F. hi
+G. None of the above
+
+Answer: E
+Concept of unreachable holds good only for loops, compiler will ignore unreachable for if else syntax.
