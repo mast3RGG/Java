@@ -1,4 +1,4 @@
-class Sort{
+class Sort2{
 void bubbleSort(int [] ar)
 {
     for(int i = 0 ; i < ar.length ; ++i)
@@ -17,7 +17,7 @@ void bubbleSort(int [] ar)
 public class BubbleSort {
     public static void main(String[] args)
     {
-        Sort arr = new Sort();
+        Sort2 arr = new Sort2();
         int ar [] = {4 , 2, 3, 2,5,6,1,23};
         arr.bubbleSort(ar);
         for(int elem : ar)
