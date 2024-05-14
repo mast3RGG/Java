@@ -233,3 +233,248 @@ G. None of the above
 
 Answer: E
 Concept of unreachable holds good only for loops, compiler will ignore unreachable for if else syntax.
+
+
+
+-----------------------------
+
+
+
+class Test{
+public static void main(String[] args){
+int x= 0;
+do{
+++x;
+System.out.print(x);//1 4 8
+I
+if(++x<5)
+continue;
+++x;
+System.out.print(x);//6 10 }while(++x<10);
+}
+}
+JVM
+x = 0,1,2,3,4,5,6,7,8,9,10,11
+Output: 146810
+
+
+-----------------------------------
+
+
+class Test{
+public static void main(String[] args){
+for(int i=0;i++<5;i++){
+System.out.println("hello");
+i=i++;
+}
+}
+}
+How many times hello will be printed?
+A. 4
+B. 3
+C. 5
+D. 2
+
+Answer : B
+
+JVM
+i =0,0<5(true), i =1,2
+i = 2,2<5(true), i =3,4
+i = 4,4<5(true), i =5,6
+i = 6,6<5(false), i =7
+
+
+--------------------------------
+
+
+public class Test {
+public static void main(String[] args) {
+int i = 5;
+System.out.print(i+++"");
+System.out.print(i+"");
+System.out.print(++i+"");
+System.out.print(++i+i+++'"');
+}
+}
+Predict the Output?
+Α. 56716
+Β. 66616
+C. 57817
+D. 67817
+
+---------------------------
+
+
+public class Test {
+public static void main(String[] args) {
+int i = 5;
+System.out.print(i+++"");//5
+System.out.print(i+"");//6
+System.out.print(++i+"");//7
+System.out.print(++i+i+++'''');//8 + 8 = 16
+}
+}
+Predict the Output?
+Α. 56716
+Β. 66616
+C. 57817
+D. 67817
+JVM
+i = 5,6,7,8,9
+
+Answer : A
+
+
+----------------------------
+
+
+
+public class Test {
+public static void main(String[] args) {
+int[] a ={0,2,4,1,3};
+for (int i=0;i<a.length;i++)
+a[i]= a[(a[i]+3)/a.length];
+System.out.println(a[1]);
+}
+}
+Predict the Output?
+A. CompileTime Error
+B. Some problem occured by jvm during execution
+C. 0
+D. 1
+E. 3
+F. None of the above
+
+Answer: F(a[1] =2)
+
+
+--------------------------------
+
+
+
+public class Test {
+public static void main(String[] args) {
+int i =0,j=5;
+for (;(i<3) && (j++<10); ){
+System.out.print("" + i + "'" +j);
+j++;
+}
+System.out.print(i +'"'" +j);
+}
+}
+Predict the Output?
+A. CompileTime Error
+B. Some problem occured by jvm during execution
+C. 06172838
+D. 06172839
+E. None of the above
+
+
+
+JVM
+i = 0,j =6, 0<3(true) && 5<10(true)
+06
+i =1, j= 7, 1<3(true) && 6<10(true)
+17
+i =2, j=8, 2<3(true) && 7<10(true)
+28
+i = 3, j =8 3<3(false)
+38
+Answer: C
+
+
+--------------------------------------------
+
+
+
+public class Test {
+public static void main(String[] args) { for (int i=0;i<10;i+=2){// i = i + 2 System.out.print(i);
+}
+}
+}
+Predict the Output?
+A. CompileTime Error
+B. Some problem occured by jvm during execution
+C. 02468
+D. 13579
+E. None of the above
+Answer: C(print even numbers)
+
+
+----------------------------------------
+
+
+public class Test {
+public static void main(String[] args) {
+int x =5;
+x*= 3*5 + 7*x-1+ ++x;// x *= 3*5 + 7*x -1 + ++x
+= 3*5+7*5-1 + 6
+=
+15+35-1+6
+x* = 55
+x = x*5
+= 55*5 = 275
+System.out.println(x);
+}
+}
+Predict the Output?
+A. CompileTime Error
+B. Some problem occured by jvm during execution
+C. 330
+D. 275
+E. None of the Above
+
+Answer: D;
+
+----------------------------------
+
+public class Test {
+public static void main(String[] args) {
+int a =3;
+switch (a){
+case 1: ++a;
+case 2: a++;
+case 3: a++;//4
+default: ++a;//5
+}
+System.out.println(a);
+}
+}
+Predict the Output?
+A. CompileTime Error
+B. Some problem occured by jvm during execution
+C. 7
+D. 5
+Ε. 6
+F.None of the above 
+Answer D;
+
+
+-------------------------------------
+
+
+public class Test {
+public static void main(String[] args) {
+int i;
+for (i=0;i<6 ;i++)
+{
+if (++i>3)
+continue;
+}
+System.out.println(++i);
+}
+}
+Predict the Output?
+A. CompileTime Error
+B. Some problem occured by jvm during execution
+C. 7
+D. 8
+Ε. 6
+F. None of the Above
+
+i=1, 0<6(true), 1>3(false)
+i=3, 2<6(true), 3>3(false)
+i=5, 4<6(true), 5>3(true)
+i=6, 6<6(false)
+i = 7
+Answer: C
