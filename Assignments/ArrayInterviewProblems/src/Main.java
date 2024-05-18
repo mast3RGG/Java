@@ -6,28 +6,57 @@
 
 class PeakElement{
 
-    int peakElementNeigbours(int [] a , int n)
+    static int peakElement(int arr[] , int n)
     {
-        if(a[0] > a[0+1])
-            return a[0];
-        else if (a[n] > a[n-1])
-            return a[n];
-        else if (n == 1)
-            return  a[0];
+        if(n == 1 )
+            return 0;
+        else if (arr[0] > arr[1])
+            return 0;
+        else if (arr[n-1] > arr[n-2])
+            return n-1;
+        else
+        {
+            for (int i = 0; i < arr.length; i++) {
+                if(arr[i] > arr[i-1] && arr[i] > arr[i+1])
+                    return i;
+            }
+        }
+        return 0;
+    }
 
-        for(int i = 0 ; i < n ; ++i)
-            if(a[i] > a[i-1] && a[i] > a[i+1])
-                return i;
+    static int peakElementBinary(int arr[] , int n)
+    {
+        int first=0;
+        int last = n - 1;
+        int mid = 0;
 
-        return -1;
+        while(first < last){
+            mid = (last + first) >> 1;
+
+            if ((mid == 0
+                    || arr[mid - 1] <= arr[mid])
+                    && (mid == n - 1
+                    || arr[mid + 1] <= arr[mid]))
+            {
+                break;
+            }
+            else if (arr[mid -1] > arr[mid])
+            {
+                last = mid -1;
+            }
+            else
+                first = mid +1;
+
+
+        }
+        return mid;
     }
 
     public static void main(String[] args)
     {
-        int [] ar = {1 , 2, 3, 4, 5, 6, 7, 8,10};
+        int [] ar = {1 , 2, 3, 4, 5, 19, 7, 8,10};
         int n = ar.length;
-        PeakElement peak = new PeakElement();
-        int element = peak.peakElementNeigbours(ar , n);
-        System.out.println("The peak number witchs is not smaller than its neighbours is : " + element);
+        int peak = peakElementBinary(ar , n);
+        System.out.println(peak);
     }
 }

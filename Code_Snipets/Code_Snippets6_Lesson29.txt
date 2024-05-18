@@ -1,0 +1,175 @@
+Given
+3. public class Spock {
+4. public static void main(String[] args) {
+5. int mask = 0;
+6. int count = 0;
+7. if(((5<7) || (++count < 10)) | mask++ < 10) mask = mask + 1;
+8. if((68) ^ false) mask = mask + 10;
+9. if(!(mask > 1) && ++count > 1) mask = mask + 100;
+10. System.out.println(mask + " " + count);
+11. }
+12.}
+Which two are true about the value of mask and the value of count at line 10? (Choose two.)
+A. mask is 0
+B. mask is 1
+C. mask is 2
+D. mask is 10
+E. mask is greater than 10
+F. count is 0
+G. count is greater than 0
+
+cout = 0 ;
+mask = 2 ;
+Answer : C , F ; 
+
+---------------------------
+
+
+Which of the following declarations are i
+1) int[] a=new int[]
+2) int[][] a=new int[3][4];
+3) int[][] a=new int[3][];
+4) int[][] a=new int[][4];
+5) int[][][] a=new int[3][4][5];
+6) int[][][] a=new int[3][4][];
+7) int[][][] a=new int[3][][5];
+
+Answer: 1,4,7 (invalid: beocz of dimension missing)
+
+----------------------------
+
+
+What is the output of this code?
+int[] a=new int[3];
+System.out.println(a);
+System.out.println(a[0]);
+A. CE
+B. [I@...
+0
+C. Some problem at the runtime
+D. [I@..
+null
+
+Answer : B;
+
+
+----------------------------
+
+
+What is the output of this code?
+int[][] a =new int[3][2]; System.out.println(a[0][0]);
+System.out.println(a); System.out.println(a[0]);
+A. CE
+Β. [I@... 
+[[I@...
+ 0
+C. Some problem at the runtime
+D. [[I@.. 
+[I@... 
+0
+E. D. [[I@.. 
+[I@...
+ null
+Answer: D
+
+
+----------------------------
+
+
+int[][] a=new int[2][]; System.out.println(a); System.out.println(a[0]); System.out.println(a[0][0]);
+A. Compile time error
+B. 0
+[I@...
+0
+C. [[I@...
+   null 
+    0
+D. [[I@... 
+[I@...
+  0
+E.C. [[I@...
+   null
+   NullPointerException
+Answer: E
+
+
+----------------------------
+
+
+For the above code predict how many objects are created and how many are eligible for garbage collection?
+int[][] a=new int[3][2];
+a[0]=new int[3];
+a[1]=new int[4];
+a=new int[4][3];
+A. object created = 3
+eligible for gc = 3
+B. object created = 11
+eligible for gc = 6
+C. object created = 10
+eligible for gc = 5
+D.object created = 10
+eligible for gc = 10
+E. None of the above
+Answer: B
+
+----------------------------
+
+What is the nature of the following code?
+class Test {
+Iint[] a; //instance variable -> memory will be created during object creationg and default value by JVM
+public static void main(String[] args) {
+Test t1=new Test();
+System.out.println(t1.a);
+System.out.println(t1.a[0]);
+}
+}
+A. Compile Time Error
+B. 0
+0
+C. [I@...
+0
+D. null
+ArrayIndexOutOfBoundsException
+E. null
+NullPointerException
+Answer: E
+
+---------------
+
+
+Q> Here a is declared at instance level
+int[] a=new int[3];
+System.out.println(obj.a); System.out.println(obj.a[0])
+A. Compile Time Error
+B. 0 0
+C. [I@... 0
+D. null
+ArrayIndexOutOfBoundsException
+E. null NullPointerException
+Answer: C
+
+-------------------
+
+
+> Predict the nature of the following code
+class Test {
+public static void main(String[] args) {
+int[] a; //local variable -> can't be used without intialization
+System.out.println(a);
+System.out.println(a[0]);
+}
+}
+A. Compile Time Error
+B. 0
+0
+C. [I@...
+0
+D. null
+ArrayIndexOutOfBoundsException
+E. null
+NullPointerException
+Answer: A
+
+
+
+---
