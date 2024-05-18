@@ -1,0 +1,277 @@
+String str =" ";
+str.trim();
+1111 System.out.println(str.equals("")+ + str.isEmpty());
+What is the result?
+A. true false
+B. true true
+C. false true
+D. false false
+
+Answer D becouse of immutable
+
+----------------------------
+
+
+
+String s = "SACHIN TENDULKAR"; 
+int len= s.trim().length(); 
+System.out.println(len);
+What is the result?
+A. 10
+B. 9
+C. 8
+D. compilation fails
+E.None of the above
+
+Answer : E(16 is the lentgh)
+
+
+-----------------------------
+
+String s= "Hello world";
+s.trim();
+int i = s.indexOf(" ");
+System.out.println(i);
+What is the result?
+A. Exception at runtime
+B. -1
+C. 5
+D. 0
+Answer: C
+
+
+--------------------------
+
+
+String s1= "Java";
+String s2=new String("java");
+//line-1
+{
+System.out.println("equal");
+}else{
+System.out.println("not equal")
+}
+To print equal which code fragment should be inserted?
+A. String s1=s2;
+if(s1==s2)
+B. if(s1.equalsIgnoreCase(s2))
+C. String s3= s2;
+if(s3.equalsIgnoreCase(s2))
+D. if(s1.toLowerCase() == s2.toLowerCase())
+Answer: A, B, C
+
+--------------------------
+
+
+System.out.print("" == "");
+System.out.print(" ");
+System.out.print("A"=="A");
+System.out.print("a==A");
+A. == A=A a=A
+B. compile time error
+C. true true a==A
+d. false true true
+E. true true false
+F. None of the above
+Answer: C
+
+
+---------------------------
+
+
+public class Test {
+public static void main(String[] args) {
+String str = "Java Rocks!";
+System.out.println(str.length() + " : " + str.charAt(10));
+}
+}
+Α. 11:!
+B. Exception is thrown at RunTime
+C. 11:s
+D. CompilationError
+Answer: A
+
+-----------------------
+
+
+What will be the result of compiling and executing Test class?
+public class Test {
+public static void main(String[] args) {
+String s1 = "OcA";
+String s2 = "oCa";
+System.out.println(s1.equals(s2));
+}
+}
+A. true
+B. false
+C. compilation error
+D. None of the above
+Answer:B
+
+-----------------------
+
+What will be the result of compiling and executing Test class?
+public class Test {
+public static void main(String[] args) {
+String fName = "James";
+String IName = "Gosling";
+System.out.println(fName = IName);
+}
+}
+A. CompilationError
+B. true
+C. false
+D. None of the above 
+
+Answer : D (Gosling)
+
+--------------------
+
+
+What will be the result of compiling and executing Test class?
+public class Test {
+public static void main(String[] args) {
+String str = "Good"; //Line 3
+change(str); //Line 4
+System.out.println(str); //Line 5
+}
+private static void change(String s) {
+s.concat("_Morning"); //Line 9
+}
+}
+A. Good
+B._Morning
+C. Good_Morning
+D. None of the above
+
+Answer : A;
+
+----------------------
+
+What will be the result of compiling and executing Test class?
+public class Test {
+public static void main(String[] args) {
+StringBuilder sb = new StringBuilder("Good"); //Line 3
+change(sb); //Line 4
+System.out.println(sb); //Line 5
+}
+private static void change (StringBuilder s) {
+s.append("_Morning"); //Line 9
+}
+}
+A. Good
+B._Morning
+C. Good_Morning
+D. None of the above
+
+Answer : C
+
+------------------------
+
+What will be the result of compiling and executing Test class?
+public class Test {
+public static void main(String[] args) {
+String str1 = new String("Core");
+String str2 = new String("CoRe");
+System.out.println(str1 = str2);
+}
+}
+A. true
+B. false
+C. Core
+D. CoRe
+
+Answer : D
+
+
+----------------------
+
+
+What will be the result of compiling and executing Test class?
+public class Test extends String {
+@Override
+public String toString() {
+return "TEST";
+}
+public static void main(String[] args) {
+Test obj = new Test();
+System.out.println(obj);
+}
+I
+}
+A. TEST
+B. Output contains some string @ symbol
+C. Excpetion is thrown at runtime
+D. Compilation Error
+Answer:D
+
+if a class is final we cant ingerit or use it with extends keyword
+
+
+-------------------------
+
+
+What will be the result of compiling and executing Test class? public class Test {
+public String toString() {
+return "TEST";
+}
+public static void main(String[] args) {
+Test obj = new Test();
+System.out.println(obj);
+}
+}
+A. TEST
+B. Output contains some string @ symbol
+C. Excpetion is thrown at runtime
+D. Compilation Error
+Answer: A
+
+
+----------------------------
+
+
+Consider below code:
+//Test.java
+public class Test {
+public static void main(String[] args) {
+String s1 = "OCAJP";
+String s2 = "OCAJP" + "";
+System.out.println(s1 == s2);
+}
+}
+What will be the result of compiling and executing Test class?
+A. OCAJP
+B. true
+C. false
+D. CompilationError 
+
+Answer : B;
+
+
+---------------------------------
+
+
+Consider below code:
+//Test.java
+public class Test {
+public static void main(String[] args) {
+final String fName = "James";
+String IName = "Gosling";
+String name1 = fName + IName;
+String name2 = fName + "Gosling";
+String name3 = "James" + "Gosling";
+System.out.println(name1 == name2);
+System.out.println(name2 == name3);
+}
+}
+What will be the result of compiling and executing Test class?
+A. true
+true
+B. true
+false
+C. false
+false
+D. false
+true
+
+Answer :  D
