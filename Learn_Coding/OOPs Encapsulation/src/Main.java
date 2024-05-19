@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class Student{
     private int age;
     private String city;
@@ -32,5 +34,6 @@ class Alin {
     Student s1 = new Student();
     s1.setAge(20);
         System.out.println(s1.getAge());
+    String s2 = "alin";
     }
     }

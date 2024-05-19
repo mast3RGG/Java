@@ -1,0 +1,314 @@
+Given
+1. class Dims {
+2. public static void main(String[] args) {
+3. int[][] a = {{1,2,}, {3,4}};
+4. int[] b = (int[]) a[1];
+5. Object 01 = a;
+6. int[][] a2 = (int[][]) 01;
+7. System.out.println(b[1]);
+8. }
+9.}
+What is the result?
+A. 2
+B. 4
+C. An exception is thrown at runtime
+D. Compilation fails due to an error on line 4.
+E. Compilation fails due to an error on line 5.
+F. Compilation fails due to an error on line 6.
+Answer: B
+
+---------------------------------------
+
+
+Given
+1. class Zippy {
+2. String[] x;
+3. int[] a[] = {{1,2}, {1}};
+4. Object c = new long [4];
+5. Object[] d = x;
+6.}
+What is the result?
+A. Compilation succeeds.
+B. Compilation fails due only to an error on line 3.
+C. Compilation fails due only to an error on line 4.
+D. Compilation fails due only to an error on line 5.
+E. Compilation fails due to errors on lines 3 and 5.
+F. Compilation fails due to errors on lines 3, 4, and 5.
+Answer: A
+
+------------------------------------------
+
+
+class Fizz {
+int x = 5;
+public static void main(String[] args) { final Fizz f1 = new Fizz();
+Fizz f2 = new Fizz();
+Fizz f3 = FizzSwitch(f1,f2);
+System.out.println((f1 == f3) + " " + (f1.x == f3.x));
+}
+static Fizz FizzSwitch (Fizz x, Fizz y) {
+final Fizz z = x;
+z.x = 6;
+return z;
+}
+}
+What is the result?
+A. true true
+B. false true
+C. true false
+D. false false
+E. Compilation fails.
+F. An exception is thrown at runtime.
+
+Answer : A;
+
+---------------------------------------
+
+
+Given
+42. public class ClassA {
+43. public int getValue() {
+44. int value=0;
+45. boolean setting = true;
+46. String title="Hello";
+47. if (value || (setting && title == "Hello")) { return 1; }
+48. if (value == 1 & title.equals("Hello")) { return 2; }
+49. }
+50.}
+And:
+70. ClassA a = new ClassA();
+71. a.getValue();
+What is the result?
+A. 1
+B. 2
+C. Compilation fails.
+D. The code runs with no output.
+E. An exception is thrown at runtime.
+
+Answer: C (operand is not of boolean type is line no 47)
+
+------------------------------
+
+
+Given
+int a= 8,b=15,c=4;
+System.out.println(2* ((a%5) * (4+(b-3)/(c+2))));
+What is the output?
+A. 30
+B. 36
+C. 32
+D. 35
+evaluation
+2*((8%5) * (4+(15-3)/(4+2))))
+2*((3 *(4+ 12/6)))
+2*((3 *(4+2))
+2*((3 * 6))
+2 * (18)
+36
+
+
+Answer B;
+----------------------------
+
+
+What will be the result of compiling and executing DivModTest class?
+public class DivModTest {
+public static void main(String[] args) {
+System.out.println(23 / 2.0); // 11.5
+System.out.println(23% 2.0);// 1.0
+}
+}
+A. 11
+1
+B. 11.5
+1.0
+c. 11.0
+1.0
+D. 11.5
+0.0
+Answer: B 
+
+--------------------------
+
+What will be the result of compiling and executing Test class?
+public class Test {
+public static void main(String[] args) {
+System.out.println("Hello" + 1 + 2 + 3 + 4);
+}
+}
+A. Hello10
+B. Hello19
+C. Hello1234
+D. Hello10
+Answer: C
+
+----------------
+
+What will be the result of compiling and executing Test class?
+public class Test {
+public static void main(String[] args) {
+System.out.println(1+ 2 + 3 + 4 + "Hello");
+}
+}
+A. 1234Hello
+B. 10Hello
+C. 64Hello
+D. 10 Hello
+
+Answer:B
+----------------------
+
+
+4.What will be the result of compiling and executing Test class?
+public class Test {
+public static void main(String[] args) {
+System.out.println("Output is: " + 10 != 5);
+}
+}
+A. Output is: true
+B. Output is: false
+C. Compilation error
+D. Output is: 10 !=5
+
+Answer : C(On String Objects only + operator is allowed other operators would result in CompileTimeError)
+
+-----------------------------	
+
+What will be the result of compiling and executing Test class?
+public class Test {
+public static void main(String[] args) {
+System.out.println("Output is: " + (10 != 5));
+}
+}
+A. Output is: true
+B. Output is: false
+C. Compilation error
+D. Output is: 10 !=5
+Answer: A
+
+-----------------------------
+
+What will be the result of compiling and executing the Test class?
+public class Test {
+public static void main(String[] args) {
+int grade = 75;
+if(grade > 60)
+System.out.println("Congratulations");
+System.out.println("You passed");
+else
+System.out.println("You failed");
+}
+}
+A. Congratulations
+B. Congratulations You passed
+C. You failed
+D. copmilation error
+
+Answer : D;
+
+------------------------------
+
+
+What will be the result of compiling and executing the Test class?
+public class Test {
+public static void main(String[] args) {
+int grade = 60;
+if(grade = 60)
+System.out.println("You passed...");
+else
+System.out.println("You failed...");
+}
+}
+A. You passed...
+B. You failed...
+C. compilation error
+D. Produces not output
+Answer: C
+
+-----------------------------
+
+Predict the following output for the given code
+public class TestApp{
+public static void main(String... args){
+String[] arr[] ={{"%","***"},{"!!!!","@@@@@","######"}};
+for(String str[]: arr){
+for(String s:str){
+System.out.println(s);
+if(s.length()==4)
+break;
+}
+break;
+}
+}
+}
+}
+A. Compile Time Error
+B. StringIndexOutOfBoundsException
+C.%
+***
+D. %
+***
+######
+E. ArrayIndexOutOfBoundsException
+E. None of the above
+
+Answer C;
+
+
+------------------------------
+
+
+What will be the result of compiling and executing Test class?
+public class Test {
+public static void main(String[] args) {
+String fruit = "mango";
+switch (fruit) {
+case "Apple":
+System.out.println("APPLE");
+case "Mango":
+
+System.out.println("MANGO");
+case "Banana":
+System.out.println("BANANA");
+break;
+default:
+System.out.println("ANY FRUIT WILL DO");
+}
+}
+}
+
+A. MANGO
+B. ANY FRUIT WILL DO
+C. MANGO
+   BANANA
+D. MANGO ANY FRUIT WILL DO
+E. MANGO
+BANANA
+ANY FRUIT WILL DO
+Answer: B
+
+-----------------------
+
+
+String fruit = "mango"; switch (fruit) {
+default:
+System.out.println("ANY FRUIT WILL DO");
+case "Apple":
+System.out.println("APPLE");
+case "Mango":
+System.out.println("MANGO");
+case "Banana":
+System.out.println("BANANA");
+break;
+}
+}
+}
+A. ANY FRUIT WILL DO
+B. MANGO
+C. MANGO
+   BANANA
+D. ANY FRUIT WILL DO APPLE
+MANGO
+BANANA
+
+Answer : D;
