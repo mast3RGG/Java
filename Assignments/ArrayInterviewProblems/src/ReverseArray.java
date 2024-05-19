@@ -1,27 +1,37 @@
-import java.util.Scanner;
-import java.util.SimpleTimeZone;
+import java.util.Arrays;
 
 public class ReverseArray {
 
-    static void palindrome(int a)
+    static void reverseArray(int[] a , int first , int last)
     {
-        String s = String.valueOf(a);
-        String s2 = "";
-        System.out.println(s);
-        for(int i = s.length() -1 ; i >= 0 ; --i){
-            s2+= s.charAt(i);
+        while(first<last){
+            int temp = a[first];
+            a[first] = a[last];
+            a[last] = temp;
+            ++first;
+            --last;
         }
-        if(s.equals(s2))
-            System.out.println("Palindrom");
-        else
-            System.out.println("No polindrome");
+    }
+    static void reverse(int a [] , int [] b)
+    {
+        int index = 0;
+        for(int i = a.length-1 ; i >= 0 ; --i) {
+            b[index] = a[i];
+            ++index;
+        }
+        for(int i = 0 ; i < b.length ; ++i) {
+            System.out.print(b[i] + " ");
+        }
     }
 
+    public static void main(String [] args)
+    {
+        int a[] = {1 , 2, 3,5,6,7,8};
+        int last = a.length-1;
+        int b[] = new int [a.length];
+        reverseArray(a , 0 , last);
+        for(int elem : a)
+            System.out.print(elem + " ");
+    }
 
-    public static void main(String[] args){
-    Scanner scan = new Scanner(System.in);
-    int nr = scan.nextInt();
-    palindrome(nr);
-
-
-}}
+}
