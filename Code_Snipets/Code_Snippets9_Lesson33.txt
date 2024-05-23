@@ -1,0 +1,116 @@
+Consider below code of Counter.java file:
+public class Counter {
+int count;
+private static void increment (Counter counter) {
+counter.count++;
+}
+public static void main(String[] args) {
+Counter c1 = new Counter();
+Counter c2 = c1;
+Counter c3 = null;
+c2.count = 1000;
+increment(c2);
+}
+}
+On executing Counter class, how many Counter objects are created in the memory?
+A. 1
+B. 2
+C. 3
+D. 4
+
+Answer : C
+
+
+
+--------------------------------
+
+
+
+public class Test {
+public static void main(String[] args) {
+String res = "";
+loop: for(int i = 1; i <= 5; i++) { //Line n1
+switch(i) {
+case 1:
+res += "UP ";
+break;
+case 2:
+res += "TO ";
+break;
+case 3:
+break;
+case 4:
+res += "DATE";
+break loop;
+
+}
+}
+System.out.println(res);//UP TO DATE System.out.println(String.join("-", res.split(" "))); //Line n2
+}
+}
+What will be the result of compiling and executing Test class?
+i = 1
+res = UP
+i = 2
+res = UP TO
+i=3
+res = UP TO
+i=4
+res = UP TO DATE
+System.out.println(String.join("-",["UP","TO","DATE"]))//take the input from an array and join with delimiter specified
+ System.out.println("UP-TO-DATE") //UP-TO-DATE
+
+
+-----------------------
+
+Consider below code of Test.java file:
+public class Test {
+public static void main(String[] args) {
+String res = ""; //Line n1
+String[] arr = {"Dog", null, "Friendly"};
+for(Strings: arr) {//Line n2
+res += String.join("-", s); //Line n3
+}
+System.out.println(res); //Line n4
+}
+}
+What will be the result of compiling and executing Test class?
+A. DogFriendly
+B. Dog-Friendly
+C. DognullFriendly
+D. Dog-null-Friendly
+E. NullPointerException is thrown
+F. CompileTimeError
+
+res = 1111
+arr = {"Dog", null, "Friendly"}
+s = Dog
+res = + String.join("-","Dog") ="" + Dog = "Dog"
+s = null
+res = "Dog"+ String.join("-", null) = "Dognull"
+s = Friendly
+res = "Dognull" + String.join("-","Friendly") = "Dognull"+"Friendly"
+res = "DognullFriendly"
+
+Answer: C
+
+
+--------------------------------
+
+
+public static void main(String... args) {
+String[][] chs = new String[2][];
+chs[0] = new String[2];chs[1] = new String[5]; int i=97;
+for (int a=0; a<chs.length;a++){
+for (int b=0;b<chs.length;b++){
+chs[a][b] = " "+i;
+i++;
+}
+}
+for (String[] ca:chs){
+for (String c: ca ){
+System.out.print(c + " ");
+}
+System.out.println();
+}
+}
