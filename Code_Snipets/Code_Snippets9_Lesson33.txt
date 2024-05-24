@@ -114,3 +114,94 @@ System.out.print(c + " ");
 System.out.println();
 }
 }
+
+Α. 97 98
+99 100 null null null
+Β. 97 98
+99 100 101 102 103
+C. Compilation fails.
+D. NullPointer exception is thrown at runtime.
+E. ArrayIndexOutOfBoundsException is thrown at runtime.
+
+Answer : A
+
+
+-----------------------
+
+
+public static void main(String... args) {
+String ta="A ";
+ta = ta.concat("B");
+String tb="C";
+ta = ta.concat(tb);
+ta.replace('C', 'D');
+ta=ta.concat(tb);
+System.out.println(ta);
+}
+A. ABCD
+B. ACD
+C. ABCC
+D. ABD
+E. ABD C
+F. CompileTimeError
+G. Some Problem at the runtime by JVM.
+ta = "ABCC"
+tb = "C" 
+
+Answer : C
+
+
+-------------------------
+
+
+public class Test {
+public static void main(String[] args) {
+StringBuilder sb = new StringBuilder("B"); //Line n1
+sb.append(sb.append("A")); //Line n2
+System.out.println(sb); //Line n3
+}
+}
+What will be the result of compiling and executing Test class?
+A. B
+B. BA
+C. AB
+D. BAB
+E. ABA
+F. ABAB
+G. BABA
+H. ABBA
+I. CompilationError at line 2 
+
+sb = "BA"
+"BA". append("BA");
+sb = "BABA" 
+
+Answer : G
+
+----------------------
+
+
+public class Test {
+public static void main(String[] args) {
+String [] arr = {"1st", "2nd", "3rd", "4th", "5th"};
+String place = "faraway";
+System.out.println(arr[place.indexOf("a", 3)]); //Line n1
+}
+}
+What will be the result of compiling and executing Test class?
+A. 1st
+B. 3rd
+C. 4th
+D. 5th
+E. 2nd
+F. Run TimeException
+G. Compiletime Error at line n-1
+
+arr[0] = 1st
+arr[1]= 2nd
+arr[2] = 3rd
+arr[3] = 4th
+arr[4] = 5th
+place = "faraway"
+System.out.println(arr[3]);
+Answer: C
