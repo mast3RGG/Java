@@ -1,0 +1,259 @@
+Consider below code of Test.java file:
+public class Test {
+public static void main(String[] args) {
+for(int i = 5; i >= 1; i--) { //Line n1
+System.out.println("*".repeat(i)); //Line n2
+}
+}
+}
+What will be the result of compiling and executing Test class?
+
+Answer : *****	
+	 ****
+	 ***	
+	 **	
+	 *
+
+
+
+----------------------
+
+
+public static void main(String... args) {
+boolean opt=true;//line5
+switch (opt){
+case true://line7
+System.out.print("True");
+break;//line9
+default:
+System.out.println("****");
+}
+System.out.println("Done");
+}
+What modification should be enabled to print TrueDone?
+A. Replace line 5 with String result="True" Replace line 7 with case "True".
+B. Replace line 5 with boolan opt=1 Replace line 7 with case 1=
+C. At line 9 remove break statement
+D. Remove the default section.
+
+Answer A
+
+-----------
+
+public static void main(String... args) {
+int x=5; //line4
+while
+//line7
+}
+(isAvailable(x)){//line5
+System.out.println(x);//line6
+}
+public static boolean isAvailable(int x){
+return x-- > 0 ? true : false;//line8
+}
+What modification should be enabled the code to print 54321
+A. Replace line 6 with System.out.print(x--);
+B. At line 4 insert x--
+C. Replace line 6 with --x and line 7, insert System.out.print(x)
+D. Replace line 8 with return (x>0) ? false:true
+
+Answer : A;
+
+------------------
+
+public static void main(String... args) {
+StringBuilder sb=new StringBuilder(5);
+String s="";
+if (sb.equals(s)){
+System.out.println("Match 1");
+}else if(sb.toString().equals(s.toString())){
+System.out.println("Match 2");
+}else{
+System.out.println("Match 3");
+}
+}
+A. Match 1
+B. Match 2
+C. CompileTime Error
+D. Match3
+E. NullPointerException
+
+Answer : Match2 (B);
+
+-----------------------
+
+
+Consider below code of Test.java file:
+public class Test {
+public static void main(String[] args) {
+String text = "RISE ";
+text = text + (text = "ABOVE ");
+System.out.println(text);
+}
+}
+What will be the result of compiling and executing Test class?
+A. RISE RISE ABOVE
+B. RISE ABOVE
+C. ABOVE ABOVE
+D. RISE ABOVE RISE
+
+Answer : B;
+
+-------------------
+
+
+What will be the result of compiling and executing Test class?
+public class Test {
+public static void main(String[] args) {
+StringBuilder sb = new StringBuilder("Java");
+String s1 = sb.toString();
+String s2 = "Java";
+I System.out.println(s1 == s2);
+}
+}
+A. compilation error
+B. true
+C. false
+D. An exception is thrown at runtime
+
+Answer : C
+
+----------------
+
+public class Test {
+public static void main(String[] args) {
+StringBuilder sb = new StringBuilder("Java");
+String s1 = sb.toString();
+String s2 = sb.toString();
+System.out.println(s1 == s2);
+}
+}
+A. compilation error
+B. true
+C. false
+D. An exception is thrown at runtime
+
+Answer : False;
+
+-------------
+
+
+public static void main(String[] args) {
+String str = "java";
+StringBuilder sb = new StringBuilder("java");
+System.out.println(str.equals(sb) + ":" + sb.equals(str));
+}
+}
+A. Compilation Error
+B. false:false
+C. false:true
+D. true:false
+E. true:true
+
+Answer : B;
+
+
+-----------------
+
+
+A bank's swift code is generally of 11 characters and used in international money transfers.
+An example of swift code: ICICINBBRT4
+Nitin Manjur
+ICIC: First 4 letters for bank code
+IN: Next 2 letters for Country code
+BB: Next 2 letters for Location code
+RT4: Next 3 letters for Branch code
+Which of the following code correctly extracts country code from the swift code referred by String reference variable swiftCode?
+A. swiftCode.substring(4,6);
+B. swiftCode.substring(5,6);
+C. swiftCode.substring(5,7);
+D. swiftCode.substring(4,5);
+Answer: ICICINBBRT4
+A. swiftCode.substring(4,6);
+
+
+----------------------
+
+Q>
+public class Test {
+public static void main(String[] args) {
+StringBuilder sb = new StringBuilder();
+System.out.println(sb.append(null).length());
+}
+}
+A. NullPointerException
+B. 1
+C. 4
+D. CompilationError
+append(String)
+append(StringBuilder)
+append(StringBuffer) 
+Answer: D
+
+------------------------
+
+
+public class Test {
+public static void main(String[] args) {
+StringBuilder sb = new StringBuilder();
+System.out.println(sb.append("").append("").append("").length());
+}
+}
+A. 0
+B. 1
+C. 2
+D. 3
+Answer: A(0)
+
+--------
+
+public class Test {
+public static void main(String[] args) {
+StringBuilder sb = new StringBuilder(5);
+sb.append("0123456789");
+sb.delete(8, 1000);
+System.out.println(sb);
+}
+}
+A. CompilationError
+B. An Exception is thrown at Runtime
+C. 01234567
+D. 89
+
+Answer : C;
+
+-----------------
+
+
+public class Test {
+public static void main(String[] args) {
+StringBuilder sb = new StringBuilder("Hurrah! I Passed...");
+sb.delete(0, 100);
+System.out.println(sb.length());
+}
+}
+Α. 19
+B. 0
+C. 16
+D. StringIndexOutOfBoundsException
+Answer: B
+
+-----------------
+
+
+public class Test {
+public static void main(String[] args) {
+StringBuilder sb = new StringBuilder(100);
+System.out.println(sb.length() + ":" + sb.toString().length());
+}
+}
+What will be the result of compiling and executing Test class?
+Α. 100:100
+Β. 100:0
+C. 16:16
+D. 16:0
+Ε. 0:0
+Answer: 0:0
+
+
+---------
