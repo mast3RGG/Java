@@ -1,0 +1,151 @@
+Q> Which of these classes have delete() and reverse() method 
+java.lang.String, java.lang.StringBuffer and java.lang.StringBuilder?
+
+In stringBuilder and StringBuffer
+
+
+-------------
+
+Q>
+String str = " ";
+System.out.println(str.isBlank());//true
+System.out.println(str.isEmpty());//false
+
+
+----------
+
+Q>java.lang.String class has append() method. Right or Wrong? 
+ans: False(we have concat())
+
+------------
+
+String str = "iNeuron Technology private limited"; 
+System.out.println(str.replace("a", "A").lastIndexOf('a'));
+Answer: -1
+
+---------
+
+
+String s1 = "1";
+System.out.println(s1.concat("2").concat("3"));
+Answer: 123
+
+---------------
+
+
+String s1 = "ONE";
+s1.concat("TWO");
+s1.concat("THREE");
+System.out.println(s1);
+Answer: ONE
+
+
+-----------------
+
+String str1 = "Java";
+String str2 = str1.intern();
+String str3 = new String("Java");
+System.out.println(str1 == str2);
+System.out.println(str2 == str3);
+System.out.println(str3 == str1);
+Answer: true,false,false
+
+
+----------------------
+
+
+String str1 = "Java";
+String str2 = str1.intern();
+System.out.println(str1 == str2);
+System.out.println(str1.equals(str2));
+Answer: true, true
+
+
+----------------
+
+StringBuffer sb1 = new StringBuffer("11111");
+StringBuffer sb2 = sb1.append(22222).reverse(); sb1 = 2222211111 and sb2 = 2222211111
+System.out.println(sb1 == sb2); //true 
+
+
+------------
+
+Q>
+StringBuffer and StringBuilder classes have intern() method. True or False? answer: False
+Q>
+System.out.println(String.join(",", "1", "2", "3").concat(",").repeat(3).lastIndexOf(','));
+output:: 1,2,3,1,2,3,1,2,3,
+Answer: 17
+
+
+--------------
+
+Q>
+String str1 = "OnE tWo ThReE fOuR";
+String str2 = "oNeTwOtHrEeFoUr";
+System.out.println(str1.trim().equalsIgnoreCase(str2));//false
+Q>
+StringBuffer sb = new StringBuffer("11111");
+System.out.println(sb.insert(3, false).insert(5, 3.3).insert(7, "One")); I
+Answer: 111fa3.One3lse11
+
+----------------------
+
+
+Q>
+String str1 = "Java J2EE Spring Hibernate SQL";
+String str2 = "Python Java Scala C C++";
+System.out.println(str1.contains("HTML") == str2.contains("HTML"));
+				false    == false
+					    true
+Answer: true
+
+
+---------------------
+
+Q>
+StringBuffer sb = new StringBuffer("One Two Three Four Five");
+ System.out.println(sb.reverse().indexOf("Two"));
+Answer: -1
+
+
+------------------------
+
+Q>
+String str = null;
+System.out.println(str.isBlank());//NullPointerException
+
+Q>.
+
+StringBuilder sb = new StringBuilder("0123456789");
+System.out.println(sb.delete(3, 6).deleteCharAt(4).deleteCharAt(5));
+Answer: 01268
+
+-----------------
+
+Q>
+String s1="sachinrameshtendulkar";
+System.out.println(s1.replace('a', 'A').indexOf('a'));
+Answer: -1
+Q>.
+String str = "ineuron Technology Private Limited"; System.out.println(str.indexOf('n', 5));
+Answer: 6
+
+
+------------------
+
+Q>.
+String str = "ineurontechnologyprivatelimited"; //length -> no of characters 
+System.out.println(str.charAt(str.length())); //charAt -> from the index 0.
+Answer: StringIndexOutOfBoundsException
+Q>.
+StringBuilder sb = new StringBuilder(-32);
+sb.append("ABC");
+System.out.println(sb);
+Answer: Negative Array Size Exception
+
+
+----------------------
+
+
+
