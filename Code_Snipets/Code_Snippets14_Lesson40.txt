@@ -1,0 +1,98 @@
+Q>
+String s1 = "null"+null+1;
+System.out.println(s1);//nullnull1
+
+
+
+Q>.
+String s1 = 1+null+"null";
+System.out.println(s1);//CE
+
+
+Q>
+String str = "sachin ramesh tendulkar";
+System.out.println(str.indexOf('a') + str.indexOf("dulkar"));//18
+Q> String name = null;
+System.out.println(name.toUpperCase());//NPE
+
+----------------------------
+
+Q>
+String[] strings = {"Java", "JEE", "Hibernate", "Spring", "SpringBoot"}; String languages = String.join("_", strings);
+System.out.println(languages);// Java_JEE_Hibernate_Spring_SpringBoot
+Q>
+String string = "JAVA";
+StringBuffer sbuffer = new StringBuffer(string);
+StringBuilder sBuilder = new StringBuilder(string);
+System.out.println(string.equals(sbuffer));//false
+System.out.println(string.equals(sBuilder));//false
+System.out.println(sbuffer.equals(sBuilder));//false
+
+
+------------------
+
+
+Q>
+public class Test{
+Boolean b[] = new Boolean[2];
+public static void main(String... args){
+Test t= new Test();
+System.out.println(t.b[0] + ":" +t.b[1]);
+}
+}
+A. NullpointerException
+B. false:false
+C. true:true
+D. null:null
+E. RunTimeException other than NullPointerException
+
+Answer : D;
+
+
+------------------
+
+public static void main(String[] args) {
+String str = "null";
+if (str == null) {
+System.out.println("null");
+} else (str.length() == 0) {
+System.out.println("zero");
+} else {
+System.out.println("some");
+}
+}
+What is the result?
+A. null
+B. zero
+C. some
+D. Compilation fails.
+E. An exception is thrown at runtime.
+
+Answer : D;
+
+
+-----------------
+
+ public class KungFu {
+ 	public static void main(String[] args) {
+ 	Integer x = 400;
+	Integer y = x;
+	x++;
+	StringBuilder sb1 = new StringBuilder("123");
+	StringBuilder sb2 = sb1;
+	sb1.append("5");
+	System.out.println((x == y) + " " + (sb1 == sb2));
+		}
+	}
+
+What is the result?
+A. true true
+B. false true
+C. true false
+D. false false
+E. Compilation fails.
+F. An exception is thrown at runtime.
+Wrapper classes and String class are immutable(changes will be made not in the same copy but in different copy) 
+StringBuilder and StringBuffer are mutable(changes will be made on the same object)
+
+Answer : B;
