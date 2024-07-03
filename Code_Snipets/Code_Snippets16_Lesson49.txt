@@ -1,0 +1,133 @@
+interface Foo {}
+class Alpha implements Foo {}
+class Beta extends Alpha {}
+class Delta extends Beta {
+public static void main(String[] args) {
+Beta x = new Beta();
+16.//insert code here 16
+}
+}
+Which code, inserted at line 16, will cause a java.lang.ClassCastException?
+A. Alpha a = x;
+B. Foo f = (Delta)x;
+C. Foo f = (Alpha)x;
+D. Beta b = (Beta) (Alpha)x;
+
+Answer : B ( becouse is a direct relation between);
+
+
+=======================================
+
+
+public class Batman {
+int squares = 81;
+public static void main(String[] args) { new Batman().go();
+}
+void go() { System.out.println(squares);
+incr(++squares);
+}
+void incr(int squares) { squares += 10; }
+}
+
+What is the result?
+Α. 81
+B. 82
+C. 91
+D. 92
+E. Compilation fails.
+F. An exception is thrown at runtime.
+
+Answer : B (82);
+
+
+====================================
+
+
+1. public class Pass {
+2. public static void main(String [] args) {
+3.int x = 5;
+4.Pass p = new Pass();
+5.p.doStuff(x);
+6.System.out.print(" main x = " + x);
+7.}
+8.
+9. void doStuff(int x) {
+10. System.out.print(" doStuff x = " + x++);
+11. }
+12.}
+What is the result?
+A. Compilation fails.
+B. An exception is thrown at runtime.
+C. doStuff x = 6 main x = 6
+D. doStuff x = 5 main x = 5
+E. doStuff x = 5 main x = 6
+F. doStuff x = 6 main x = 5
+
+Answer : D;
+
+
+===============================
+
+Given:
+String[] elements = { "for", "tea", "too" };
+String first = (elements.length > 0) ? elements[0] : null;
+What is the result?
+A. Compilation fails.
+B. An exception is thrown at runtime.
+C. The variable first is set to null.
+D. The variable first is set to elements[0].
+
+Answer:D;
+
+
+================================
+
+10. public class SuperCalc {
+11. protected static int multiply(int a, int b) { return a * b;}
+12.}
+and:
+20. public class SubCalc extends SuperCalc{
+21. public static int multiply(int a, int b) {
+22.int c = super.multiply(a, b);
+23.return c;
+24. }
+25.}
+and:
+30. SubCalc sc = new SubCalc ();
+31. System.out.println(sc.multiply(3,4));
+32. System.out.println(SubCalc.multiply(2,2));
+What is the result?
+A. 12,4
+B. The code runs with no output.
+C. An exception is thrown at runtime.
+D. Compilation fails because of an error in line 21.
+E. Compilation fails because of an error in line 22.
+F. Compilation fails because of an error in line 31.
+
+Answer : E;
+
+
+==============================
+
+class Foo {
+public int a = 3;
+public void addFive() { a += 5; System.out.print("f "); }
+}
+class Bar extends Foo {
+public int a = 8;
+public void addFive() { this.a += 5; System.out.print("b"); }
+}
+Invoked with:
+Foo f = new Bar();
+f.addFive();
+System.out.println(f.a);
+What is the result?
+A. b 3
+B. b 8
+C. b 13
+D. f 3
+E. f 8
+F. f 13
+G. Compilation fails.
+
+Answer : A;
