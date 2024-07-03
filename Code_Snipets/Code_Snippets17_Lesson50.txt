@@ -1,0 +1,231 @@
+class Thingy { Meter m = new Meter(); }
+class Component { void go() { System.out.print("c"); } }
+class Meter extends Component { void go() { System.out.print("m"); } }
+class Deluxe Thingy extends Thingy {
+public static void main(String[] args) {
+Deluxe Thingy dt = new Deluxe Thingy();
+dt.m.go();
+Thingy t = new Deluxe Thingy();
+t.m.go();
+}
+}
+Which two are true? (Choose two.)
+A. The output is mm.
+B. The output is mc.
+C. Component is-a Meter.
+D. Component has-a Meter.
+E. Deluxe Thingy is-a Component.
+F. Deluxe Thingy has-a Component.
+
+Answer : A , F;
+
+
+==================================
+
+
+public class Test{
+public static void main(String[] args){
+boolean a =new Boolean(Boolean.valueOf(args[0])); System.out.println(a);
+boolean b =new Boolean(args[1]); System.out.println(b);
+}
+}
+And the commands are javac Test.java
+java Test 1 null
+What is the result?
+A. 1 null
+B. true false
+C. false false
+D. true true
+E. Class cast Exception is thrown at the runtime
+
+
+Answer : C
+
+
+=======================================
+
+public class Test {
+public static void doSum(int x, int y){
+System.out.println("int sum is:: "+(x+y)); }
+public static void doSum(Integer x, Integer y){ System.out.println("Integer sum is:: "+(x+y));
+I
+}
+public static void doSum(double x, double y){ System.out.println("double sum is:: "+(x+y));
+}
+public static void doSum (float x, float y){ System.out.println("float sum is:: "+(x+y));
+}
+public static void main(String[] args) { doSum(10,20); doSum(10.0,20.0);
+}
+}
+
+
+
+What is the result?
+A. int sum is :: 30 float sum is :: 30.0
+B. int sum is :: 30 double sum is :: 30.0
+C. Integer sum is :: 30 double sum is :: 30.0
+D. Integer sum is:: 30 float sum is :: 30.0
+
+
+Answer : B
+
+
+====================================
+
+
+Given:
+1. public class BuildStuff {
+2. public static void main(String[] args) {
+3.Boolean test = new Boolean(true);
+4.Integer x = 343;
+5.Integer y = new BuildStuff().go(test, x);
+6.System.out.println(y);
+7. }
+8.int go(Boolean b, int i) {
+9.if(b) return (i/7);
+10.return (i/49);
+11.}
+12.}
+
+
+\What is the result?
+A. 7
+B. 49
+C. 343
+D. Compilation fails.
+E. An exception is thrown at runtime.
+
+Answer : B;
+
+=============================
+
+
+class Vehicle{
+int x;
+Vehicle(){
+this(10);
+}
+Vehicle(int x){
+this.x = x;
+}
+}
+class Car extends Vehicle{
+int y;
+Car(){
+super(); // line n1
+this(20); // line n2
+}
+Car(int y){
+this.y= y;
+}
+public String toString(){
+return super.x + " " + super.y;
+}
+}
+public class Test {
+public static void main(String[] args) {
+Vehicle y= new Car(); 
+System.out.println(y);}}
+
+Predict the answer
+A. 10:20
+Β. 0:20
+C. Compilation fails at line n1
+D. Compilation fails at line n2
+
+Answer : D;	
+
+
+
+=============================
+
+
+
+public static void main(String[] args) {
+Integer i = new Integer(1) + new Integer(2); //LINE 12
+switch(i) { //LINE 13
+case 3: System.out.println("three"); break;
+default: System.out.println("other"); break; // LINE 15
+}
+}
+What is the result?
+A. three
+B. other
+C. An exception is thrown at runtime.
+D. Compilation fails because of an error on line 12.
+E. Compilation fails because of an error on line 13.
+F. Compilation fails because of an error on line 15.
+
+Answer : A
+
+================
+
+
+Given:
+public class Foo {
+I
+static int[] a;
+static { a[0]=2; }
+public static void main(String[] args) {}
+}
+Which exception or error will be thrown when a programmer attempts to run this code?
+A. java.lang.StackOverflowError
+B. java.lang.IllegalStateException
+C. java.lang.ExceptionInInitializerError
+D. java.lang.ArrayIndexOutOfBoundsException
+
+Answer : C;
+
+
+=======================
+
+Given:
+10. interface Jumper { public void jump(); }
+20. class Animal {}
+30. class Dog extends Animal {
+31. Tail tail;
+32. }
+40. class Beagle extends Dog implements Jumper{
+41. public void jump() {}
+42.}
+50. class Cat implements Jumper{
+51. public void jump() {}
+52. }
+Which three are true? (Choose three.)
+A. Cat is-a Animal
+B. Cat is-a Jumper
+C. Dog is-a Animal
+D. Dog is-a Jumper
+E. Cat has-a Animal
+F. Beagle has-a Tail
+G. Beagle has-a Jumper
+
+Answer : B , C ,F 
+
+
+===============================
+
+Given:
+1. class X {
+2. X() { System.out.print(1); }
+3. X(int x) {
+4. this(); System.out.print(2);
+5. }
+6.}
+7. public class Y extends X {
+8. Y() { super(6); System.out.print(3); }
+9. Y(int y) {
+10. this(); System.out.println(4);
+11. }
+12. public static void main(String[] a) { new Y(5); }
+13.}
+What is the result?
+
+Α. 13
+B. 134
+C. 1234
+D. 2134
+Ε. 2143
+F. 4321
+
+Answer : C; 
