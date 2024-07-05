@@ -1,0 +1,189 @@
+abstract public class Employee {
+protected abstract double getSalesAmount();
+public double getCommision() {
+return getSalesAmount() * 0.15;
+}
+}
+class Sales extends Employee {
+17.// insert method here
+}
+Which two methods, inserted independently at line 17, correctly complete the Sales class? (Choose two.)
+A. double getSalesAmount() { return 1230.45; }
+B. public double getSalesAmount() { return 1230.45; }
+C. private double getSalesAmount() { return 1230.45; }
+D. protected double getSalesAmount() { return 1230.45; }
+
+
+Answer : BD
+
+
+=========================
+
+Given this code from Class B:
+25. A a1 = new A();
+26. A a2 = new A();
+27. A a3 = new A();
+28. System.out.println(A.getInstanceCount());
+What is the result?
+1. public class A{
+2.
+3. private int counter = 0;
+4.
+5. public static int getInstanceCount() {
+6. return counter;
+7.}
+8.
+9. public A() {
+10. counter++;
+11.}
+12.
+13.}
+
+A. Compilation of class A fails.
+B. Line 28 prints the value 3 to System.out.
+C . Line 28 prints the value 1 to System.out.
+D. A runtime error occurs when line 25 executes.
+E. Compilation fails because of an error on line 28.
+
+Answer : A;
+
+
+==============================
+
+
+Given:
+1. public class A {
+2. public void doit() {
+3. }
+4. public String doit() {
+5. return "a";
+6. }
+7. public double doit(int x) {
+8. return 1.0;
+9. }
+10.}
+
+What is the result?
+A. An exception is thrown at runtime.
+B. Compilation fails because of an error in line 7.
+C. Compilation fails because of an error in line 4.
+D. Compilation succeeds and no runtime errors with class A occur.
+
+
+Answer : C
+
+
+=================	
+
+QUESTION
+Which three code fragments, added individually at line 29, produce the output 100? (Choose three.)
+class Inner {
+private int x;
+public void setX(int x) { this.x = x; }
+public int getX(){ return x;}
+}
+class Outer {
+private Inner y;
+public void setY(Inner y ){ this.y = y; }
+public Inner getY() { return y; }
+}
+public class Gamma {
+public static void main(String[] args) {
+Outer o = new Outer();
+Inner i = new Inner();
+int n = 10;
+i.setX(n);
+o.setY(i);
+// insert code here 29
+System.out.println(o.getY().getX());
+
+A. n = 100;
+B. i.setX(100);
+C. o.getY().setX(100);
+D. i = new Inner(); i.setX(100);
+E. o.setY(i); i = new Inner(); i.setX(100);
+F. i = new Inner(); i.setX(100); o.setY(i);
+
+
+Answer : B C F 	
+
+
+========================
+
+
+public class Base {
+public static final String FOO = "foo";
+public static void main(String[] args) {
+Base b = new Base();
+Sub s = new Sub();
+System.out.print(Base.FOO);
+System.out.print(Sub.FOO);
+System.out.print(b.FOO);
+System.out.print(s.FOO);
+System.out.print(((Base) s).FOO);
+}
+class Sub extends Base {
+}
+public static final String FOO = "bar";
+}
+What is the result?
+A. foofoofoofoofoo
+B. foobarfoobarbar
+C. foobarfoofoofoo
+D. foobarfoobarfoo
+E. barbarbarbarbar
+F. foofoofoobarbar
+G. foofoofoobarfoo
+
+Answer : D;
+
+
+=====================================
+
+
+Given:
+1. class Mammal {
+2.}
+3.
+4. class Raccoon extends Mammal {//Raccoon IS-A Mammal, Raccoon HAS-A mamal 5. Mammal m = new Mammal();
+6.}
+7.
+8. class BabyRaccoon extends Mammal {//BabyRaccoon IS-A Mammal, Baby Raccoon HAS-A Mammal
+9.}
+10.
+Which four statements are true? (Choose four.)
+A. Raccoon is-a Mammal.
+B. Raccoon has-a Mammal.
+C. BabyRaccoon is-a Mammal.
+D. BabyRaccoon is-a Raccoon.
+E. BabyRaccoon has-a Mammal.
+F. BabyRaccoon is-a BabyRaccoon.
+Answer: ABCF
+
+====================
+
+Given
+public class Hello {
+String title;
+int value;
+public Hello() {
+title += " World";
+}
+public Hello(int value) {
+this.value = value; title = "Hello"; Hello();
+}
+}
+and:
+Hello c = new Hello(5);
+System.out.println(c.title);
+
+
+What is the result?
+A. Hello
+B. Hello World
+C. Compilation fails.
+D. Hello World 5
+E. The code runs with no output.
+F. An exception is thrown at runtime.
+
+Answer : C;
