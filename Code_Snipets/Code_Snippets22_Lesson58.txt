@@ -1,0 +1,149 @@
+Q>
+public interface A111 {
+String s = "yo";
+public void method1();
+}
+interface B {
+}
+interface C extends A111, B {
+public void method1();
+public void method1(int x);
+}
+What is the result?
+
+
+A. Compilation succeeds.
+B. Compilation fails due to multiple errors.
+C. Compilation fails due to an error only on line 20.
+D. Compilation fails due to an error only on line 21.
+E. Compilation fails due to an error only on line 22.
+F. Compilation fails due to an error only on line 12
+
+Answer: A;
+
+=====================
+
+
+Given:
+public class Yikes {
+public static void go(Long n) { 
+System.out.print("Long "); }
+
+public static void go(Short n) { 
+System.out.print("Short "); }
+public static void go(int n) { System.out.print("int ");
+}
+public static void main(String[] args) {
+short y = 6;
+long z = 7;
+go(y);
+go(z);
+}
+}
+
+What is the result?
+A. int Long
+B. Short Long
+C. Compilation fails.
+D. An exception is thrown at runtime.
+
+Answer : A;
+
+
+
+======================
+
+Given:
+class Alpha {
+public void foo() { System.out.print("Afoo "); }
+}
+public class Beta extends Alpha {
+public void foo() { System.out.print("Bfoo "); }
+public static void main(String[] args) {
+Alpha a = new Beta();
+Beta b = (Beta)a;
+a.foo();
+b.foo();
+}
+}
+What is the result?
+A. Afoo Afoo
+B. Afoo Bfoo
+C. Bfoo Afoo
+D. Bfoo Bfoo
+E. Compilation fails.
+F. An exception is thrown at runtime.
+
+Answer: Answer : D;
+
+===============
+
+
+Given:
+1. public class Target {
+2.
+private int i = 0;
+3. public int addOne() {
+4. return ++i;
+5. }
+6.}
+And:
+1. public class Client {
+2.public static void main(String[] args){
+3.System.out.println(new Target().addOne());
+4. }
+5.}
+Which change can you make to Target without affecting Client?
+A. Line 4 of class Target can be changed to return i++;
+B. Line 2 of class Target can be changed to private int i = 1;
+C. Line 3 of class Target can be changed to private int addOne(){
+D. Line 2 of class Target can be changed to private Integer i = 0;
+
+Answer : D;
+
+
+===================
+
+Given:
+class Animal { public String noise() { return "peep"; }
+}
+class Dog extends Animal { public String noise() { return "bark"; }
+}
+class Cat extends Animal { public String noise() { return "meow"; }
+}
+...
+30. Animal animal = new Dog();
+31. Cat cat = (Cat)animal;
+32. System.out.println(cat.noise());
+
+Answer : Exception
+
+
+
+=====================
+
+
+Given:
+1. public class Venus {
+2.
+public static void main(String[] args) {
+3.int[] x = {1, 2, 3};
+4.int y[] = { 4, 5, 6 };
+5.new Venus().go(x, y);
+6. }
+7.
+8. void go(int[]... z) {
+9.for (int[] a: z)
+10.System.out.print(a[0]);
+11. }
+12.}
+What is the result?
+
+A. 1
+B. 12
+C. 14
+D. 123
+E. Compilation fails.
+F. An exception is thrown at runtime.
+
+Answer : C;
