@@ -1,0 +1,220 @@
+1. public class Breaker2 {
+2. static String o = "";
+3.
+4. public static void main(String[] args) {
+5.	z: for (int x = 2; x < 7; x++) {
+6.		if (x == 3)
+7.		    continue;
+8.		if (x == 5)
+9.	  	    break z;
+10. 		o = o + x;
+11.}
+12.System.out.println(o);
+13.}
+14.}
+15.
+
+What is the result?
+A. 2
+B. 24
+C. 234
+D. 246
+Ε. 2346
+F. Compilation fails
+
+Answer : B;
+
+
+===================================
+
+
+Given:
+1. public class GC {
+2. private Object o;
+3. private void doSomething Else(Object obj) { o = obj; }
+4. public void doSomething() {
+5. 	Object o = new Object();
+6. 	doSomething Else(o);
+7. 	o = new Object();
+8. 	doSomething Else(null);
+9. 	o = null;
+10. }
+11.}
+When the doSomething method is called, after which line does the Object created in line 5 become available for garbage collection?
+A. Line 5
+B. Line 6
+C. Line 7
+D. Line 8
+E. Line 9
+F. Line 10
+
+Answer : D;
+
+
+=============================
+
+
+
+Given:
+1. interface DeclareStuff {
+2. public static final int EASY = 3;
+3.
+4. void doStuff(int t);
+5.}
+6.
+7. public class TestDeclare implements DeclareStuff {
+8. public static void main(String[] args) {
+9.	int x = 5;
+10.	new TestDeclare().doStuff(++x);
+11. }
+12.
+13. 	void doStuff(int s) {
+14.		s += EASY + ++s;
+15.		System.out.println("s " + s);
+16. }
+17.}
+
+What is the result?
+A. s 14
+B. s 16
+C. s 10
+D. Compilation fails.
+E. An exception is thrown at runtime.
+Answer: D;
+
+
+
+===========================
+
+
+
+QUESTION
+Given:
+public class Spock {
+public static void main(String[] args) {
+Long tail = 2000L;
+Long distance = 1999L;
+Long story = 1000L;
+	if ((tail > distance) ^ ((story * 2) == tail))
+		System.out.print("1");
+	if ((distance + 1 != tail) ^ ((story * 2) == distance))
+		System.out.print("2");
+}
+}
+What is the result?
+A. 1
+B. 2
+C. 12
+D. Compilation fails.
+E. No output is produced.
+F. An exception is thrown at runtime
+
+Answer : 2;
+
+
+=============================
+
+
+interface DoStuff2 { float getRange(int low, int high);
+}
+interface DoMore { float getAvg(int a, int b, int c);
+}
+abstract class DoAbstract implements DoStuff2, DoMore {
+}
+class DoStuff implements DoStuff2 {
+public float getRange(int x, int y) {
+return 3.14f;
+}
+}
+interface DoAll extends DoMore { float getAvg(int a, int b, int c, int d);
+}
+
+What is the result?
+A. The file will compile without error.
+B. Compilation fails. Only line 7 contains an error.
+C. Compilation fails. Only line 12 contains an error.
+D. Compilation fails. Only line 13 contains an error.
+E. Compilation fails. Only lines 7 and 12 contain errors.
+F. Compilation fails. Only lines 7 and 13 contain errors.
+G. Compilation fails. Lines 7, 12, and 13 contain errors.
+Answer: A
+
+=====================================
+
+
+1.class TestException extends Exception {
+public TestException() {
+super(); }
+public TestException(String s) {
+super(s);
+}
+}
+
+public class Test {
+public void m1() throws ________________{
+throw new TestException(); } 
+}}
+For the above code, fill in the blank with one option.
+A. Exception
+B. Object
+C. RunTimeException
+D. Error
+
+
+Answer : A;
+
+
+========================================
+
+
+2.
+public class Test {
+private static int [] arr;
+public static void main(String[] args) {
+if(arr.length > 0 && arr != null) {
+System.out.println(arr[0]);
+}
+}
+}
+Predict Output, if the above code is run with given command?
+java Test
+A. CompilationError
+B. No Output is produced
+C. NullPointerException is thrown at runtime
+D. ArrayIndexOutOfBoundsException is thrown at runtime
+
+
+Answer : C
+
+
+====================================
+
+abstract class Super {
+public abstract void m1() throws IOException; }
+class Sub extends Super {
+@Override
+public void m1() throws IOException {
+throw new FileNotFoundException();
+}
+}
+public class Test {
+public static void main(String[] args) {
+Super s = new Sub();
+try {
+s.m1();
+} catch (IOException e) {
+System.out.print("A");
+} catch (FileNotFoundException e) {
+System.out.print("B");
+} finally {
+System.out.print("C");
+}}
+
+A. AC
+B. BC
+C. class sub gives compilation error
+D. class Test gives compilation error
+
+
+Answer : D;
+
