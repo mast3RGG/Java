@@ -1,0 +1,176 @@
+3. public class Circles {
+4.public static void main(String[] args) {
+5.int[] ia = {1,3,5,7,9};
+6. for(int x : ia) {
+7.for(int j = 0; j < 3; j++) {
+8.if(x > 4 && x < 8) continue;
+9.System.out.print(" " + x);
+10.if(j == 1) break;
+11.continue;
+12. }
+13. continue;
+14. }
+15. }
+16.}
+What is the result?
+Α. 139
+B. 5577
+C. 13399
+D. 113399
+Ε. 111333999
+F. Compilation fails
+
+Answer: D;
+
+===============================
+
+
+3. public class OverAndOver {
+4.static String s = "";
+5.public static void main(String[] args) {
+6.try {
+7.s += "1";
+8.throw new Exception();
+9.} catch (Exception e) { s += "2";
+10.} finally { s += "3"; doStuff(); s += "4";
+11.}
+12.System.out.println(s);
+13.}
+14. static void doStuff() { int x = 0; int y = 7/x; }
+15.}
+
+What is the result?
+A. 12
+B. 13
+C. 123
+D. 1234
+E. Compilation fails
+F. 123 followed by an exception
+G. 1234 followed by an exception
+H. An exception is thrown with no other output
+Answer: H
+
+
+===============================
+
+
+3. public class Wind {
+4.	public static void main(String[] args) {
+5. 	foreach:
+6.		for(int j=0; j<5; j++) {
+7.		for(int k=0; k< 3; k++) {
+8.			System.out.print(" " + j);
+9.		if(j==3 && k==1) break foreach;
+10.		if(j==0 || j==2) break;
+11.}
+12. }
+13.}
+14.}
+	
+What is the result?
+A. 0123
+Β. 11133
+C. 0111233
+D. 11133444
+Ε. 0111233444
+F. Compilation fails
+
+Answer: C;
+
+
+==========================
+
+
+Given:
+3. public class Gotcha {
+4. public static void main(String[] args) {
+5.// insert code here
+6.
+7.}
+8. void go() {
+9. go();
+10. }
+11.}
+
+And given the following three code fragments:
+
+I. new Gotcha().go();
+II. try { new Gotcha().go(); }
+catch (Error e) { System.out.println("ouch"); }
+III. try { new Gotcha().go(); }
+catch (Exception e) { System.out.println("ouch"); }
+
+When fragments I - III are added, independently, at line 5, which are true? (Choose all that apply.)
+A. Some will not compile
+B. They will all compile
+C. All will complete normally
+D. None will complete normally
+E. Only one will complete normally
+F. Two of them will complete normally
+
+Answer: B , E;
+
+
+==============================
+
+
+Given:
+1. public class Frisbee {
+2. // insert code here
+3. int x = 0;
+4. System.out.println(7/x);
+5.}
+6.}
+
+And given the following four code fragments:
+
+1. public static void main(String[] args) {
+II. public static void main(String[] args) throws Exception {
+III. public static void main(String[] args) throws IOException {
+IV. public static void main(String[] args) throws RuntimeException { I
+
+If the four fragments are inserted independently at line 4, which are true? (Choose all that apply.)
+A. All four will compile and execute without exception
+B. All four will compile and execute and throw an exception
+C. Some, but not all, will compile and execute without exception
+D. Some, but not all, will compile and execute and throw an exception
+E. When considering fragments II, III, and IV, of those that will compile, adding a try/catch block around line 6 will cause compilation to fail.
+
+Answer: D :
+
+
+
+===================================
+
+
+3. class Tire {
+4. void doStuff() {}
+5.}
+6. public class Retread extends Tire {
+7.public static void main(String[] args) {
+8.new Retread().doStuff();
+9. }
+10.
+// insert code here
+11.
+System.out.println(7/0);
+12. }
+13.}
+
+And given the following four code fragments:
+I. void doStuff() {
+II. void doStuff() throws MyException {
+III. void doStuff() throws RuntimeException {
+IV. void doStuff() throws ArithmeticException {
+
+When fragments I - IV are added, independently, at line 10, which are true? (Choose all that apply.)
+
+A. None will compile
+B. They will all compile
+C. Some, but not all, will compile
+D. All of those that compile will throw an exception at runtime
+E. None of those that compile will throw an exception at runtime
+F. Only some of those that compile will throw an exception at runtime
+
+Answer : C ,D 
+==

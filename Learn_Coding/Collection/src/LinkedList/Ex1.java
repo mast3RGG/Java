@@ -9,6 +9,7 @@ public class Ex1 {
 		System.out.println(ll);
 		ll.add(2 , 10);
 		ll.addFirst(1000);
+		ll.remove(1);
 		System.out.println(ll);
 	}
 }

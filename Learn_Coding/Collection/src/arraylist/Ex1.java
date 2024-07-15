@@ -1,6 +1,7 @@
 package arraylist;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 
 
 public class Ex1 {
@@ -27,5 +28,7 @@ public class Ex1 {
 		ArrayList l3 = new ArrayList();
 		l3.addAll(l2);
 		System.out.println(l3);
+		
+		
 	}
 }
