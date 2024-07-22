@@ -1,0 +1,144 @@
+What will be the result of compiling and executing Test class?
+public class Test {
+public static void main(String[] args) {
+try {
+main(args);
+} catch (Exception ex) {
+System.out.println("CATCH-");
+}
+System.out.println("OUT");
+}
+}
+A. CATCH-OUT
+B. OUT
+C. None of the System.out.println() will be executed
+D. CompilationError.
+
+Answer : C;
+
+
+===================
+
+public class Test {
+public static void main(String[] args) {
+StringBuilder sb = new StringBuilder();
+try {
+for(;;) {
+sb.append("OCA");
+}
+} catch(Exception e) {
+System.out.println("Exception!!!");
+}
+System.out.println("Main ends!!!");
+}
+}
+What will be the result of compiling and executing Test class?
+A. "Main ends!!!" printed on the console and program terminates succesfully
+B. "Exception!!!" and "Main ends!!!" printed on the console and program terminates succesfully.
+C. "Exception!!!" is printed on the console and program terminates succesfully.
+D. "Exception!!!" is printed on the console and program terminates abnormally.
+E. Program terminates abruptly.
+
+Answer : E;
+
+==========================
+
+What will be the result of compiling and executing Test class? //Test.java
+import java.io.FileNotFoundException;
+public class Test {
+public static void main(String[] args) {
+try {
+System.out.println(1);
+} catch (NullPointerException ex) {
+System.out.println("ONE");
+} catch (FileNotFoundException ex) {
+System.out.println("TWO");
+}
+System.out.println("THREE");
+}
+}
+
+A. ONE
+THREE
+B. TWO
+THREE
+C. THREE
+D. None of the System.out.println() be executed
+E. CompilationError
+
+
+Answer : E;
+
+
+===========================
+
+
+//Class1.java
+import java.io.FileNotFoundException;
+public class Class1 {
+public void read() throws FileNotFoundException {}
+}
+//Class2.java
+public class Class2 {
+String Class2;
+public void Class2() {}
+}
+//Class3.java
+public class Class3 {
+private void print() {
+private String msg = "HELLO";
+System.out.println(msg);
+}
+}
+Which of the following statement is true?
+A. Only Class1.java compiles succesfully
+B. Only Class2.java compiles succesfully
+C. Only Class3.java compiles succesfully
+D. Class1.java and Class2.java compiles succesfully
+E. Class1.java and Class3.java compiles succesfully
+F. Class2.java and Class3.java compiles succesfully
+
+Answer : D:
+
+
+
+=======================
+
+What will be the result of compiling and executing Test class?
+public class Test {
+public static void main(String[] args) {
+m1(); //Line 3 
+}
+private static void m1() throws Exception { //Line 6
+System.out.println("NOT THROWING ANY EXCEPTION"); //Line 7
+}
+}
+A. CompilationError at Line 3
+B. CompilationError at Line 7
+C. CompilationError at Line 6
+D. NOT THROWING ANY EXCEPTION
+throws====> compiler check for handling code
+a. throws
+b. try and catch
+
+Answer : A
+
+
+================================
+
+Question 20:
+Consider below code:
+public class Test {
+static {
+System.out.println(1/0);
+}
+public static void main(String[] args) {
+System.out.println("HELLO");
+}
+}
+On execution, does Test class print "HELLO" on to the console?
+A.HELLO is printed on the console
+B.NO Hello is not printed on the console
+Answer: java.lang.ExcpetionInIntializerError
+
+Answer : B

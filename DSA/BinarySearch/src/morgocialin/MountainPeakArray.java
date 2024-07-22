@@ -10,15 +10,18 @@ public class MountainPeakArray {
 	private static int peakArrayMountain(int[] ar) {
 		int start = 0 ; 
 		int end = ar.length-1;
-		while(start <= end)
+		while(start < end)
 		{
-			if(ar[mid] > ar[mid +1]))
+			int mid = start + (end - start)/2;
+			if(ar[mid] > ar[mid +1])
 				{
-					start = mid +1;
+					end = mid;
 				}
-			else if ( ar[mid] < ar[mid+1])
+			else {
+				start = mid +1;
+			}
 				
 		}
-		return 0;
+		return start;
 	}
 }
