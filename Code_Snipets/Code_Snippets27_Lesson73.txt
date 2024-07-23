@@ -1,0 +1,101 @@
+public class Test {
+static Double d1;
+static int x = d1.intValue();
+public static void main(String[] args) {
+System.out.println("HELLO");
+}
+}
+On execution, does Test class print "HELLO" on to the console?
+A.Yes HELLO is printed on the console
+B.NO Hello is not printed on the console
+
+Answer : B;
+
+
+====================================
+
+
+public class Test {
+static Double d1; // static variable ====> d1 =null
+int x = d1.intValue();//instance variable ====> only upon creating an object
+public static void main(String[] args) { System.out.println("HELLO");//HELLO
+}
+}
+On execution, does Test class print "HELLO" on to the console?
+A.Yes HELLO is printed on the console
+B.NO Hello is not printed on the console
+Answer: A
+
+
+
+=============================
+
+
+What will be the result of compiling and executing Test class?
+public class Test {
+public static void main(String[] args) {
+Error obj = new Error();
+boolean flag1 = obj instanceof RuntimeException; //Line n1
+boolean flag2 = obj instanceof Exception; //Line n2
+boolean flag3 = obj instanceof Error; //Line n3
+boolean flag4 = obj instanceof Throwable; //Line n4
+System.out.println(flag1 + ":" + flag2 + ":" + flag3 + ":" + flag4);
+}
+}
+A. Compilation Error
+B. false:false:true:true
+C. false:true:true:true
+D. true:true:true:true
+E. false:true:true:false
+
+Answer : A
+
+========================
+
+Fill in the blanks for the definition of java.lang.Error class:
+public class java.lang.Error extends {...}
+A. RunTimeException
+B. Exception
+C. Throwable I
+Answer: C
+
+
+=====================
+
+
+Question>
+Given code of Test.java file:
+public class Test {
+public static void main(String[] args) {
+System.out.println(new RuntimeException()); //Line n1
+System.out.println(new RuntimeException("HELLO")); //Line n2
+System.out.println(new RuntimeException(new RuntimeException("HELLO"))); //Line n3
+}
+}
+Does above code compile successfully?
+A. Yes
+B. No
+
+
+Ans : A;
+
+
+
+================================
+
+Question>
+Given code of Test.java file:
+interface ILogger {
+void log();
+}
+public class Test {
+public static void main(String[] args) { ILogger [] loggers = new ILogger[2]; //Line n1 ==JVM ==> loggers [0] =null; loggers[1] =null; for(ILogger logger: loggers) logger.log(); //Line n2 ====JVM====> NullPointerException
+}
+I
+}
+What will be the result of compiling and executing Test class?
+A. Line n1 causes compilation error
+B. Line n2 causes compilation error
+C. Exception is thrown at runtime
+D. No output is displayed but program terminates succesfully.
+Answer: C
