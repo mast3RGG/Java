@@ -1,5 +1,6 @@
 package deafaultpakage;
 
+import java.util.Comparator;
 import java.util.TreeSet;
 
 class Person implements Comparable<Person> {
