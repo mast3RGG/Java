@@ -1,9 +1,9 @@
 package morgocialinclobblob;
 
 import java.io.File;
-import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
+import java.io.Reader;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,43 +13,41 @@ import org.apache.commons.io.IOUtils;
 
 import morgocialinutil.ClassJDBCUtil;
 
-public class RetreiveBlobOpeartion {
+public class RetrievelClob {
 	public static void main(String[] args) {
-		
+
 		Connection connection = null;
 		PreparedStatement prstm = null;
 		ResultSet resultSet = null;
 
 		String SQLSelectQuery = null;
+		int id = 3;
 		
 		try {
 			connection = ClassJDBCUtil.getConnectionJDBC();
-			
-			
+
 			if (connection != null) {
-				SQLSelectQuery = "select id , name ,image from person where id = ?";
+				SQLSelectQuery = "select id , name ,history from cities where id = ?";
 
 				prstm = connection.prepareStatement(SQLSelectQuery);
-					
-				prstm.setInt(1 , 1);
+
+				prstm.setInt(1, id);
 			}
-			
-			if(prstm != null)
-			{
+
+			if (prstm != null) {
 				resultSet = prstm.executeQuery();
+
+				if (resultSet.next()) {
 				
-				if(resultSet.next())
-				{
-					int id = resultSet.getInt(1);
+					int idd = resultSet.getInt(1);
 					String name = resultSet.getString(2);
-				 	
-					InputStream is = resultSet.getBinaryStream(3);
-					
-					File file = new File("copied.jpg");
-					FileOutputStream fos = new FileOutputStream(file);
-					
-					//This is not an optimal solutution and there performance is low
-					
+					Reader reader = resultSet.getCharacterStream(3);
+
+					File file = new File("history.txt");
+					FileWriter fileWriter = new FileWriter(file);
+
+					// This is not an optimal solutution and there performance is low
+
 //					int i = is.read();
 //					
 //					while(i != -1)
@@ -57,28 +55,26 @@ public class RetreiveBlobOpeartion {
 //						fos.write(i);
 //						i = is.read();
 //					}
-					
-					//This is optimal solution but hard to remember
+
+					// This is optimal solution but hard to remember
 //					byte [] b = new byte[1024];
 //					
-						//					while(is.read(b) > 0)
+					// while(is.read(b) > 0)
 //					{
 //						fos.write(b);
 //					}
-					
-					IOUtils.copy(is , fos);
+
+					IOUtils.copy(reader, fileWriter);
 					System.out.println("ID \t Name \t\t  FileLocation");
 					System.out.println(id + "\t" + name + "\t" + file.getAbsolutePath());
-				}
-				else {
-					System.out.println("There is no such client");
+				} else {
+					System.out.println("There is no such city");
 				}
 			}
-			
+
 		} catch (SQLException | IOException e) {
 			e.printStackTrace();
-		}
-		finally {
+		} finally {
 			try {
 				ClassJDBCUtil.closeAllResourses(connection, prstm, resultSet);
 			} catch (SQLException e) {
@@ -86,4 +82,5 @@ public class RetreiveBlobOpeartion {
 			}
 		}
 	}
+
 }
