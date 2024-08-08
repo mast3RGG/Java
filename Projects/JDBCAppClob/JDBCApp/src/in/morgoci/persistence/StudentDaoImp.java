@@ -3,6 +3,7 @@ package in.morgoci.persistence;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import in.morgoci.dto.Student;
@@ -45,9 +46,52 @@ public class StudentDaoImp implements IStudentDao {
 
 	@Override
 	public Student searchStudent(Integer sid) {
-		return null;
-	}
 
+		Connection connection = null;
+		PreparedStatement pstatm = null;
+		ResultSet resultSet = null;
+
+		Student std = null;
+		
+		try {
+			if (connection == null)
+				connection = ClassJDBCUtil.getConnectionJDBC();
+
+			String selectByIdQuery = "select id , sname ,sage ,adress from student where id = ?";
+
+			if (connection != null) {
+				pstatm = connection.prepareStatement(selectByIdQuery);
+			}
+
+			if (pstatm != null) {
+				pstatm.setInt(1, sid);
+				resultSet = pstatm.executeQuery();
+			}
+			
+			if (resultSet != null) {
+				if(resultSet.next()) {
+					std = new Student();
+					
+					std.setSid(resultSet.getInt(1));
+					std.setSname(resultSet.getString(2));
+					std.setSage(resultSet.getInt(3));
+					std.setSadress(resultSet.getString(4));
+			
+			}
+		}} catch (SQLException | IOException e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				ClassJDBCUtil.closeAllResourses(connection, pstatm, resultSet);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return std;
+	}
+	
 	@Override
 	public String updateStudent(Integer sid, String sname, Integer sage, String adress) {
 		return null;

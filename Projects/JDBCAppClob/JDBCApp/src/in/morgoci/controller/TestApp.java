@@ -2,6 +2,7 @@ package in.morgoci.controller;
 
 import java.util.Scanner;
 
+import in.morgoci.dto.Student;
 import in.morgoci.service.IStudentService;
 import in.morgoci.servicefactory.StudentServiceFactory;
 
@@ -9,11 +10,40 @@ public class TestApp {
 
 	public static void main(String[] args) {
 		
+		//insertOperation();
+	
+		selectById();
+	}
+	
+
+	private static void selectById() {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter the id : ");
+		Integer id = scan.nextInt();
+		
+		IStudentService studentService = StudentServiceFactory.getStudentService();
+		
+		Student std = studentService.searchStudent(id);
+		
+		if (std != null) {
+			System.out.println(std);
+			
+			System.out.println("ID\tNAME\tAGE\tADRESS");
+			System.out.println(std.getSid() + "\t" + std.getSname() + "\t"  + std.getSage() + "\t" + std.getSadress());
+		} else {
+			System.out.println("Record not found for the respective id");
+		}
+		
+		scan.close();
+	}
+
+	private static void insertOperation() {
 		IStudentService studentService = StudentServiceFactory.getStudentService();
 
-			Scanner scan = new Scanner(System.in);
-			
-			System.out.print("Enter your name : ");
+		Scanner scan = new Scanner(System.in);
+
+		System.out.print("Enter your name : ");
 			String sname = scan.next();
 			
 			System.out.print("Enter your age : ");
@@ -29,7 +59,9 @@ public class TestApp {
 			 System.out.println("Record inserted succesfully");
 		 } else {
 			 System.out.println("Recored insertion failed ....");
-		 }
+			}
+
+			scan.close();
 	}
 
 }

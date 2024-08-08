@@ -21,7 +21,8 @@ public class StudentServiceImpl implements IStudentService {
 
 	@Override
 	public Student searchStudent(Integer sid) {
-		return null;
+		studentDao = StudentDaoFactory.getStudentDao();
+		return studentDao.searchStudent(sid);
 	}
 
 	@Override
