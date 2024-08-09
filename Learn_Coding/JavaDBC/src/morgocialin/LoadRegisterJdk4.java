@@ -11,7 +11,7 @@ public class LoadRegisterJdk4 {
 	public static void main(String[] args) throws ClassNotFoundException , SQLException, IOException{
 		String url = "jdbc:mysql:///training";
 		String name = "root";
-		String pass = "mastergigi2006";
+		String pass = "Alinroot123";
 		Connection connection = DriverManager.getConnection(url , name ,pass);
 		Statement statement = connection.createStatement();
 		//String deleteQuery = "delete from student where sid = 1";

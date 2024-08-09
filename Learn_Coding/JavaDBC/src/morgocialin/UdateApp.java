@@ -12,7 +12,7 @@ public class UdateApp {
 		System.out.println("Class got loaded");
 		String url = "jdbc:mysql://localhost:3306/training";	
 		String usr = "root";	
-		String pass = "mastergigi2006";	
+		String pass = "Alinroot123";	
 		Connection connection = DriverManager.getConnection(url , usr , pass);
 		Statement statement = connection.createStatement();
 		String sqlQuery = "select sid , sname ,sage , sadress from student";

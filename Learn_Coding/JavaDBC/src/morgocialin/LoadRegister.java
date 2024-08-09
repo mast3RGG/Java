@@ -15,7 +15,7 @@ public class LoadRegister {
 		System.out.println("Class got loaded");
 		String url = "jdbc:mysql://localhost:3306/training";
 		String user = "root";
-		String pass = "mastergigi2006";
+		String pass = "Alinroot123";
 		connection = DriverManager.getConnection(url , user , pass);
 		
 		String sqlQuery = "select * from student";

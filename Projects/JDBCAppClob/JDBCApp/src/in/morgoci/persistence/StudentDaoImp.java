@@ -52,7 +52,7 @@ public class StudentDaoImp implements IStudentDao {
 		ResultSet resultSet = null;
 
 		Student std = null;
-		
+
 		try {
 			if (connection == null)
 				connection = ClassJDBCUtil.getConnectionJDBC();
@@ -67,21 +67,21 @@ public class StudentDaoImp implements IStudentDao {
 				pstatm.setInt(1, sid);
 				resultSet = pstatm.executeQuery();
 			}
-			
+
 			if (resultSet != null) {
-				if(resultSet.next()) {
+				if (resultSet.next()) {
 					std = new Student();
-					
+
 					std.setSid(resultSet.getInt(1));
 					std.setSname(resultSet.getString(2));
 					std.setSage(resultSet.getInt(3));
 					std.setSadress(resultSet.getString(4));
-			
+
+				}
 			}
-		}} catch (SQLException | IOException e) {
+		} catch (SQLException | IOException e) {
 			e.printStackTrace();
-		}
-		finally {
+		} finally {
 			try {
 				ClassJDBCUtil.closeAllResourses(connection, pstatm, resultSet);
 			} catch (SQLException e) {
@@ -91,7 +91,7 @@ public class StudentDaoImp implements IStudentDao {
 
 		return std;
 	}
-	
+
 	@Override
 	public String updateStudent(Integer sid, String sname, Integer sage, String adress) {
 		return null;
@@ -99,7 +99,31 @@ public class StudentDaoImp implements IStudentDao {
 
 	@Override
 	public String deleteStudent(Integer sid) {
-		return null;
+
+		String sqlDeleteQuery = "delete from student where id = ?";
+		Integer rowAffected = 0;
+
+		try {
+			connection = ClassJDBCUtil.getConnectionJDBC();
+
+			if (connection != null) 
+				prstm = connection.prepareStatement(sqlDeleteQuery);
+
+			if (prstm != null) {
+				prstm.setInt(1, sid);
+				rowAffected = prstm.executeUpdate();
+
+				if (rowAffected == 0) {
+					return "not found";
+				} else {
+					return "succes";
+				}
+			}
+
+		} catch (SQLException | IOException e) {
+			e.printStackTrace();
+		}
+		return "failure";
 	}
 
 }

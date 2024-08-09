@@ -8,12 +8,12 @@ import in.morgoci.servicefactory.StudentServiceFactory;
 public class StudentServiceImpl implements IStudentService {
 
 	IStudentDao studentDao;
-	
+
 	@Override
 	public String addStudent(String sname, Integer sage, String adress) {
 		studentDao = StudentDaoFactory.getStudentDao();
-		
-		if(studentDao != null)
+
+		if (studentDao != null)
 			return studentDao.addStudent(sname, sage, adress);
 		else
 			return "failure";
@@ -32,7 +32,9 @@ public class StudentServiceImpl implements IStudentService {
 
 	@Override
 	public String deleteStudent(Integer sid) {
-		return null;
+		studentDao = StudentDaoFactory.getStudentDao();
+		return studentDao.deleteStudent(sid);
+
 	}
 
 }

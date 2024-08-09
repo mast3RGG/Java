@@ -7,5 +7,7 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/mysqllib"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/text"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Excel"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
